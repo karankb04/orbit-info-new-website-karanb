@@ -235,8 +235,15 @@ p{line-height:1.65}
 /* ============ PRECISION / 3D ============ */
 .precision{background:var(--off-white);padding:120px 0;overflow:hidden}
 .precision-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
-#laptop3d{width:100%;height:440px;cursor:grab}
-#laptop3d:active{cursor:grabbing}
+.repair-art{position:relative;width:100%;border-radius:22px;overflow:hidden;background:radial-gradient(130% 120% at 25% 12%,#143063,#070f24 72%);box-shadow:var(--shadow);border:1px solid var(--line)}
+.repair-art svg{width:100%;height:auto;display:block}
+.repair-art .scan{animation:ra-scan 3.6s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes ra-scan{0%{transform:translateY(0)}50%{transform:translateY(296px)}100%{transform:translateY(0)}}
+.repair-art .nd{animation:ra-pulse 2.4s ease-in-out infinite}
+.repair-art .nd.d2{animation-delay:.8s}.repair-art .nd.d3{animation-delay:1.5s}
+@keyframes ra-pulse{0%,100%{opacity:.3}50%{opacity:1}}
+.repair-art .reticle{animation:ra-drift 8s ease-in-out infinite}
+@keyframes ra-drift{0%,100%{transform:translate(0,0)}50%{transform:translate(9px,-7px)}}
 .precision .feat{display:flex;flex-direction:column;gap:16px;margin-top:34px}
 .precision .feat .row{display:flex;gap:16px;align-items:flex-start}
 .precision .feat .tick{flex:none;width:30px;height:30px;border-radius:9px;background:rgba(0,123,255,.1);color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:700}
@@ -354,7 +361,6 @@ p{line-height:1.65}
   .stats-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .precision-grid{gap:36px}
-  #laptop3d{height:340px}
   .pin-visual{max-width:360px;margin:0 auto;order:-1}
   .pin-track{height:auto}
   .pin-stage{position:relative;height:auto;padding:80px 0;display:block}
@@ -568,7 +574,45 @@ p{line-height:1.65}
 <section class="precision" id="precision">
   <div class="wrap precision-grid">
     <div class="reveal">
-      <div id="laptop3d" aria-label="Rotating 3D laptop illustration"></div>
+      <div class="repair-art">
+<svg viewBox="0 0 520 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A circuit board under precision inspection, illustrating chip-level repair">
+<defs>
+<linearGradient id="ra-board" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12295a"/><stop offset="1" stop-color="#0a1a3a"/></linearGradient>
+<linearGradient id="ra-chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f2148"/><stop offset="1" stop-color="#060f24"/></linearGradient>
+<linearGradient id="ra-scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E97FF" stop-opacity="0"/><stop offset=".5" stop-color="#2E97FF" stop-opacity=".5"/><stop offset="1" stop-color="#2E97FF" stop-opacity="0"/></linearGradient>
+<radialGradient id="ra-lens" cx="50%" cy="42%" r="68%"><stop offset="0" stop-color="#2E97FF" stop-opacity=".12"/><stop offset="1" stop-color="#2E97FF" stop-opacity="0"/></radialGradient>
+<clipPath id="ra-clip"><rect x="40" y="45" width="440" height="350" rx="20"/></clipPath>
+</defs>
+<g opacity=".15" fill="none" stroke-width="1.4"><circle cx="476" cy="54" r="66" stroke="#2E97FF"/><circle cx="476" cy="54" r="104" stroke="#FF9933" opacity=".7"/></g>
+<rect x="40" y="45" width="440" height="350" rx="20" fill="url(#ra-board)" stroke="#2E97FF" stroke-opacity=".25"/>
+<rect x="40" y="45" width="440" height="120" rx="20" fill="#fff" opacity=".03"/>
+<g clip-path="url(#ra-clip)">
+<g fill="none" stroke="#2E97FF" stroke-opacity=".28" stroke-width="1.5"><path d="M70 110 H150 V170"/><path d="M70 330 H140 V250"/><path d="M450 120 H360 V180"/><path d="M450 320 H372 V250"/><path d="M260 70 V120"/><path d="M260 320 V378"/></g>
+<rect x="78" y="150" width="46" height="30" rx="4" fill="#0f2148" stroke="#2E97FF" stroke-opacity=".25"/>
+<rect x="398" y="150" width="40" height="58" rx="4" fill="#0f2148" stroke="#2E97FF" stroke-opacity=".25"/>
+<circle cx="108" cy="322" r="13" fill="#0f2148" stroke="#FF9933" stroke-opacity=".5"/><circle cx="108" cy="322" r="5" fill="#FF9933" fill-opacity=".5"/>
+<circle cx="150" cy="322" r="13" fill="#0f2148" stroke="#2E97FF" stroke-opacity=".4"/><circle cx="150" cy="322" r="5" fill="#2E97FF" fill-opacity=".5"/>
+<g fill="#FF9933" fill-opacity=".5"><rect x="356" y="362" width="9" height="20"/><rect x="370" y="362" width="9" height="20"/><rect x="384" y="362" width="9" height="20"/><rect x="398" y="362" width="9" height="20"/><rect x="412" y="362" width="9" height="20"/></g>
+<circle class="nd" cx="70" cy="110" r="4" fill="#2E97FF"/><circle class="nd d2" cx="450" cy="320" r="4" fill="#2E97FF"/><circle class="nd d3" cx="150" cy="322" r="4" fill="#FF9933"/>
+<g fill="#cfd8ec" fill-opacity=".5"><rect x="197.5" y="141" width="5" height="11" rx="1.5"/><rect x="197.5" y="288" width="5" height="11" rx="1.5"/><rect x="212.5" y="141" width="5" height="11" rx="1.5"/><rect x="212.5" y="288" width="5" height="11" rx="1.5"/><rect x="227.5" y="141" width="5" height="11" rx="1.5"/><rect x="227.5" y="288" width="5" height="11" rx="1.5"/><rect x="242.5" y="141" width="5" height="11" rx="1.5"/><rect x="242.5" y="288" width="5" height="11" rx="1.5"/><rect x="257.5" y="141" width="5" height="11" rx="1.5"/><rect x="257.5" y="288" width="5" height="11" rx="1.5"/><rect x="272.5" y="141" width="5" height="11" rx="1.5"/><rect x="272.5" y="288" width="5" height="11" rx="1.5"/><rect x="287.5" y="141" width="5" height="11" rx="1.5"/><rect x="287.5" y="288" width="5" height="11" rx="1.5"/><rect x="302.5" y="141" width="5" height="11" rx="1.5"/><rect x="302.5" y="288" width="5" height="11" rx="1.5"/><rect x="317.5" y="141" width="5" height="11" rx="1.5"/><rect x="317.5" y="288" width="5" height="11" rx="1.5"/><rect x="179" y="163.5" width="11" height="5" rx="1.5"/><rect x="330" y="163.5" width="11" height="5" rx="1.5"/><rect x="179" y="178.5" width="11" height="5" rx="1.5"/><rect x="330" y="178.5" width="11" height="5" rx="1.5"/><rect x="179" y="193.5" width="11" height="5" rx="1.5"/><rect x="330" y="193.5" width="11" height="5" rx="1.5"/><rect x="179" y="208.5" width="11" height="5" rx="1.5"/><rect x="330" y="208.5" width="11" height="5" rx="1.5"/><rect x="179" y="223.5" width="11" height="5" rx="1.5"/><rect x="330" y="223.5" width="11" height="5" rx="1.5"/><rect x="179" y="238.5" width="11" height="5" rx="1.5"/><rect x="330" y="238.5" width="11" height="5" rx="1.5"/><rect x="179" y="253.5" width="11" height="5" rx="1.5"/><rect x="330" y="253.5" width="11" height="5" rx="1.5"/><rect x="179" y="268.5" width="11" height="5" rx="1.5"/><rect x="330" y="268.5" width="11" height="5" rx="1.5"/><rect x="179" y="283.5" width="11" height="5" rx="1.5"/><rect x="330" y="283.5" width="11" height="5" rx="1.5"/></g>
+<rect x="190" y="150" width="140" height="140" rx="9" fill="url(#ra-chip)" stroke="#2E97FF" stroke-opacity=".55"/>
+<rect x="208" y="168" width="104" height="104" rx="4" fill="#0a1a3a" stroke="#2E97FF" stroke-opacity=".22"/>
+<g fill="none" stroke="#2E97FF" stroke-opacity=".3" stroke-width="1"><rect x="228" y="188" width="64" height="64" rx="2"/><rect x="244" y="204" width="32" height="32" rx="2"/></g>
+<circle cx="260" cy="220" r="4" fill="#2E97FF" fill-opacity=".7"/>
+<g transform="translate(0)" class="scan"><rect x="40" y="42" width="440" height="44" fill="url(#ra-scan)"/><rect x="40" y="63" width="440" height="1.6" fill="#7dbcff" opacity=".8"/></g>
+</g>
+<g class="reticle">
+<circle cx="260" cy="220" r="86" fill="url(#ra-lens)" stroke="#2E97FF" stroke-opacity=".75" stroke-width="2"/>
+<circle cx="260" cy="220" r="86" fill="none" stroke="#2E97FF" stroke-opacity=".18" stroke-width="6"/>
+<g stroke="#2E97FF" stroke-opacity=".4" stroke-width="1"><line x1="200" y1="220" x2="320" y2="220"/><line x1="260" y1="160" x2="260" y2="280"/></g>
+<g stroke="#2E97FF" stroke-width="2.4" fill="none" stroke-linecap="round">
+<path d="M186 168 v-12 h12"/><path d="M334 168 v-12 h-12"/><path d="M186 272 v12 h12"/><path d="M334 272 v12 h-12"/></g>
+</g>
+<g stroke="#cfd8ec" stroke-opacity=".85"><line x1="438" y1="70" x2="322" y2="170" stroke-width="2"/></g>
+<polygon points="322,170 334,167 330,180" fill="#eef3fb"/>
+<circle cx="438" cy="70" r="4" fill="#FF9933"/>
+<g transform="translate(330,86)"><rect x="0" y="0" width="118" height="26" rx="13" fill="#0a1a3a" stroke="#2E97FF" stroke-opacity=".4"/><circle cx="16" cy="13" r="4" fill="#2E97FF"/><text x="30" y="17" font-family="'Space Grotesk',sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#dfe6f5">MICRO-SOLDER</text></g>
+</svg></div>
     </div>
     <div class="reveal">
       <span class="eyebrow on-light">The craft</span>
@@ -705,7 +749,6 @@ p{line-height:1.65}
 <!-- ===== SCRIPTS ===== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -813,50 +856,6 @@ document.querySelectorAll('[data-count],[data-text]').forEach(el=>{
       onUpdate:self=>{const idx=Math.min(slides.length-1,Math.floor(self.progress*slides.length));show(idx);}
     });
   }else{slides.forEach(s=>gsap.set(s,{opacity:1,y:0}));}
-})();
-
-/* ---- 3D laptop (Three.js) ---- */
-(function(){
-  const mount=document.getElementById('laptop3d');if(!mount||!window.THREE)return;
-  const W=()=>mount.clientWidth,H=()=>mount.clientHeight;
-  const scene=new THREE.Scene();
-  const cam=new THREE.PerspectiveCamera(38,W()/H(),0.1,100);cam.position.set(0,1.6,7.2);
-  const rnd=new THREE.WebGLRenderer({antialias:true,alpha:true});
-  rnd.setPixelRatio(Math.min(devicePixelRatio,2));rnd.setSize(W(),H());mount.appendChild(rnd.domElement);
-  scene.add(new THREE.AmbientLight(0xffffff,.55));
-  const key=new THREE.DirectionalLight(0xffffff,1.1);key.position.set(4,6,5);scene.add(key);
-  const blue=new THREE.PointLight(0x2E97FF,1.3,30);blue.position.set(-5,2,4);scene.add(blue);
-  const grp=new THREE.Group();scene.add(grp);
-  const matBody=new THREE.MeshStandardMaterial({color:0xdfe6f0,metalness:.85,roughness:.32});
-  const matDark=new THREE.MeshStandardMaterial({color:0x0a1a3a,metalness:.6,roughness:.4});
-  const matScreen=new THREE.MeshStandardMaterial({color:0x07101f,emissive:0x0a3a78,emissiveIntensity:.6,metalness:.4,roughness:.3});
-  // base
-  const base=new THREE.Mesh(new THREE.BoxGeometry(4,0.16,2.7),matBody);base.position.y=-0.6;grp.add(base);
-  // keyboard inset
-  const kb=new THREE.Mesh(new THREE.BoxGeometry(3.5,0.02,1.7),matDark);kb.position.set(0,-0.51,.1);grp.add(kb);
-  // trackpad
-  const tp=new THREE.Mesh(new THREE.BoxGeometry(1.1,0.02,.7),matDark);tp.position.set(0,-0.51,1.05);grp.add(tp);
-  // lid pivot
-  const lid=new THREE.Group();lid.position.set(0,-0.68,-1.35);grp.add(lid);
-  const panel=new THREE.Mesh(new THREE.BoxGeometry(4,2.5,0.12),matBody);panel.position.set(0,1.25,0);lid.add(panel);
-  const screen=new THREE.Mesh(new THREE.PlaneGeometry(3.6,2.15),matScreen);screen.position.set(0,1.25,0.07);lid.add(screen);
-  // glowing orbit ring on screen
-  const ring=new THREE.Mesh(new THREE.TorusGeometry(.62,.03,12,60),new THREE.MeshBasicMaterial({color:0x2E97FF}));
-  ring.position.set(0,1.25,0.12);lid.add(ring);
-  lid.rotation.x=-1.95;
-  grp.rotation.x=0.12;
-  let drag=false,px=0,vel=0.004,rot=-0.5;
-  mount.addEventListener('pointerdown',e=>{drag=true;px=e.clientX});
-  addEventListener('pointerup',()=>drag=false);
-  addEventListener('pointermove',e=>{if(drag){vel=(e.clientX-px)*0.0006;rot+=(e.clientX-px)*0.006;px=e.clientX}});
-  function loop(){
-    requestAnimationFrame(loop);
-    if(!drag&&!reduce)rot+=0.004;
-    grp.rotation.y=rot;ring.rotation.z+=0.02;
-    rnd.render(scene,cam);
-  }
-  loop();
-  addEventListener('resize',()=>{cam.aspect=W()/H();cam.updateProjectionMatrix();rnd.setSize(W(),H())});
 })();
 
 /* ---- FORM validation ---- */
