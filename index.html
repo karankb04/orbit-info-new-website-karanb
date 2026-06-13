@@ -203,24 +203,32 @@ p{line-height:1.65}
 .svc-card .scene{position:absolute;inset:0;z-index:-1;opacity:.5}
 
 /* ============ STICKY SHOWCASE ============ */
-.pin-sec{background:var(--navy-900);color:#fff;overflow:hidden}
-.pin-track{height:400vh;position:relative}
-.pin-stage{position:sticky;top:0;height:100svh;display:flex;align-items:center;overflow:hidden}
-.pin-rings{position:absolute;width:140vmin;height:140vmin;left:50%;top:50%;transform:translate(-50%,-50%);z-index:0;opacity:.4}
-.pin-bigword{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--display);font-weight:800;font-size:clamp(5rem,22vw,20rem);color:rgba(255,255,255,.03);white-space:nowrap;z-index:0;letter-spacing:-.04em}
-.pin-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.pin-slides{position:relative;min-height:300px}
-.pin-slide{position:absolute;inset:0;opacity:0;transform:translateY(30px);display:flex;flex-direction:column;justify-content:center}
-.pin-slide .step{font-family:var(--display);font-weight:700;color:var(--blue-bright);font-size:1rem;letter-spacing:.1em}
-.pin-slide h3{font-size:clamp(2.4rem,5.5vw,4.4rem);margin:14px 0 16px;color:#fff}
-.pin-slide p{color:#c4cde0;max-width:42ch;font-size:1.1rem}
-.pin-slide ul{list-style:none;margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
-.pin-slide li{font-size:.85rem;color:#dfe6f5;background:rgba(255,255,255,.06);border:1px solid var(--line);padding:7px 14px;border-radius:100px}
-.pin-visual{position:relative;aspect-ratio:1;border-radius:28px;background:linear-gradient(160deg,var(--navy-700),var(--navy-900));border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
-.pin-visual svg{width:62%;height:62%}
-.pin-progress{position:absolute;left:50%;bottom:42px;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
-.pin-progress .pd{width:34px;height:4px;border-radius:4px;background:rgba(255,255,255,.16);overflow:hidden}
-.pin-progress .pd i{display:block;height:100%;width:0;background:var(--blue-bright)}
+.svc-tab-sec{background:var(--navy-900);color:#fff;padding:110px 0;overflow:hidden;position:relative}
+.svc-tab-sec .arc-bg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:110vmin;height:110vmin;opacity:.18;pointer-events:none}
+.svc-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;position:relative;z-index:2}
+.svc-tab{font-family:var(--display);font-weight:700;font-size:.88rem;letter-spacing:.08em;padding:12px 22px;border-radius:100px;border:1.5px solid var(--line);background:transparent;color:var(--light-grey);cursor:pointer;transition:all .22s ease}
+.svc-tab:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+.svc-tab.active{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 28px -10px rgba(0,123,255,.6)}
+.svc-panels{position:relative;z-index:2}
+.svc-panel{display:none;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.svc-panel.active{display:grid;animation:panelIn .38s cubic-bezier(.4,0,.2,1)}
+@keyframes panelIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.svc-panel .step{font-family:var(--display);font-weight:700;color:var(--blue-bright);font-size:.9rem;letter-spacing:.12em}
+.svc-panel h3{font-size:clamp(2.2rem,5vw,4rem);margin:14px 0 18px;color:#fff;line-height:1.04}
+.svc-panel p{color:#c4cde0;font-size:1.08rem;max-width:44ch;line-height:1.7}
+.svc-panel ul{list-style:none;margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+.svc-panel li{font-size:.85rem;color:#dfe6f5;background:rgba(255,255,255,.06);border:1px solid var(--line);padding:7px 14px;border-radius:100px}
+.svc-panel .panel-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.svc-panel-visual{position:relative;aspect-ratio:1;border-radius:28px;background:linear-gradient(160deg,var(--navy-700),var(--navy-900));border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.svc-panel-visual svg{width:62%;height:62%}
+@media(max-width:980px){
+  .svc-panel.active{grid-template-columns:1fr}
+  .svc-panel-visual{max-width:320px;margin:0 auto;order:-1}
+}
+@media(max-width:560px){
+  .svc-tabs{gap:8px}
+  .svc-tab{font-size:.8rem;padding:10px 16px}
+}
 
 /* ============ STATS ============ */
 .stats{background:var(--navy-800);color:#fff;padding:110px 0;position:relative;overflow:hidden}
@@ -357,16 +365,11 @@ p{line-height:1.65}
 @media(max-width:980px){
   .nav-links,.nav-phone{display:none}
   .burger{display:flex}
-  .svc-grid,.why-grid,.stats-grid,.precision-grid,.lead-grid,.footer-grid,.pin-grid{grid-template-columns:1fr}
+  .svc-grid,.why-grid,.stats-grid,.precision-grid,.lead-grid,.footer-grid{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .precision-grid{gap:36px}
-  .pin-visual{max-width:360px;margin:0 auto;order:-1}
-  .pin-track{height:auto}
-  .pin-stage{position:relative;height:auto;padding:80px 0;display:block}
-  .pin-slides{position:relative;min-height:0}
-  .pin-slide{position:relative;opacity:1!important;transform:none!important;margin-bottom:60px}
-  .pin-bigword,.pin-progress{display:none}
+
 }
 @media(max-width:560px){
   .stats-grid,.footer-grid{grid-template-columns:1fr}
@@ -510,46 +513,51 @@ p{line-height:1.65}
 </section>
 
 <!-- ===== STICKY SHOWCASE ===== -->
-<section class="pin-sec" id="pinSec">
-  <div class="pin-track" id="pinTrack">
-    <div class="pin-stage">
-      <svg class="pin-rings" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke-width="1"><circle cx="200" cy="200" r="80" stroke="#2E97FF" opacity=".5"/><circle cx="200" cy="200" r="130" stroke="#FF9933" opacity=".35"/><circle cx="200" cy="200" r="180" stroke="#fff" opacity=".15"/></g></svg>
-      <span class="pin-bigword" id="pinBigword">REPAIR</span>
-      <div class="pin-grid wrap">
-        <div class="pin-slides" id="pinSlides">
-          <article class="pin-slide" data-slide>
-            <span class="step">SERVICE 01</span>
-            <h3>Laptop Repair</h3>
-            <p>Drop it off or we collect it. Chip-level diagnosis, honest quote, same-day on most jobs.</p>
-            <ul><li>Screen &amp; hinge</li><li>Water damage</li><li>SSD upgrades</li><li>Motherboard</li></ul>
-          </article>
-          <article class="pin-slide" data-slide>
-            <span class="step">SERVICE 02</span>
-            <h3>CCTV Setup</h3>
-            <p>Site survey, neat cabling, and a live view on your phone before we leave.</p>
-            <ul><li>CP Plus</li><li>Hikvision</li><li>Panasonic</li><li>Remote view</li></ul>
-          </article>
-          <article class="pin-slide" data-slide>
-            <span class="step">SERVICE 03</span>
-            <h3>Tally Software</h3>
-            <p>Licensing, GST-ready setup and customization — with support that actually answers.</p>
-            <ul><li>Sales partner</li><li>Implementation</li><li>Customization</li><li>AMC support</li></ul>
-          </article>
-          <article class="pin-slide" data-slide>
-            <span class="step">SERVICE 04</span>
-            <h3>Synology Backup</h3>
-            <p>Automatic, redundant business backup configured by an authorized partner.</p>
-            <ul><li>NAS setup</li><li>RAID config</li><li>Auto backup</li><li>Recovery plan</li></ul>
-          </article>
-        </div>
-        <div class="pin-visual" id="pinVisual">
-          <svg viewBox="0 0 200 200" aria-hidden="true" id="pinIcon"><g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="45" y="55" width="110" height="70" rx="6"/><path d="M35 125h130l10 18H25z"/></g></svg>
-        </div>
-      </div>
-      <div class="pin-progress" id="pinProgress">
-        <span class="pd"><i></i></span><span class="pd"><i></i></span><span class="pd"><i></i></span><span class="pd"><i></i></span>
-      </div>
+<section class="svc-tab-sec">
+  <svg class="arc-bg" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke-width="1.2"><circle cx="200" cy="200" r="90" stroke="#2E97FF" opacity=".5"/><circle cx="200" cy="200" r="145" stroke="#FF9933" opacity=".3"/><circle cx="200" cy="200" r="195" stroke="#fff" opacity=".1"/></g></svg>
+  <div class="wrap">
+    <div class="sec-head dark reveal" style="margin-bottom:0">
+      <span class="eyebrow on-dark">What we do</span>
+      <h2 style="margin-top:16px">Four things we do<br>better than anyone in Mulund.</h2>
     </div>
+    <div class="svc-tabs reveal" role="tablist" style="margin-top:38px"><button class="svc-tab  active" data-tab="0" aria-selected="true">Laptop Repair</button><button class="svc-tab" data-tab="1" aria-selected="false">CCTV Setup</button><button class="svc-tab" data-tab="2" aria-selected="false">Tally Software</button><button class="svc-tab" data-tab="3" aria-selected="false">Synology Backup</button></div>
+    <div class="svc-panels reveal"><div class="svc-panel  active" data-panel="0">
+      <div>
+        <span class="step">SERVICE 01</span>
+        <h3>Laptop Repair</h3>
+        <p>Drop it off or we collect it. Chip-level diagnosis, honest quote, same-day on most jobs.</p>
+        <ul><li>Screen &amp; hinge</li><li>Water damage</li><li>SSD upgrades</li><li>Motherboard</li></ul>
+        <div class="panel-cta"><a href="services.html#laptop" class="btn btn-primary"><span>Learn more</span> <span class="arr">→</span></a><a href="contact.html" class="btn btn-ghost"><span>Get a quote</span></a></div>
+      </div>
+      <div class="svc-panel-visual"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="45" y="55" width="110" height="70" rx="6"/><path d="M35 125h130l10 18H25z"/><line x1="80" y1="95" x2="100" y2="95"/><line x1="100" y1="95" x2="115" y2="75"/></g></svg></div>
+    </div><div class="svc-panel" data-panel="1">
+      <div>
+        <span class="step">SERVICE 02</span>
+        <h3>CCTV Setup</h3>
+        <p>Site survey, neat cabling, and a live view on your phone before we leave.</p>
+        <ul><li>CP Plus</li><li>Hikvision</li><li>Panasonic</li><li>Remote view</li></ul>
+        <div class="panel-cta"><a href="services.html#cctv" class="btn btn-primary"><span>Learn more</span> <span class="arr">→</span></a><a href="contact.html" class="btn btn-ghost"><span>Get a quote</span></a></div>
+      </div>
+      <div class="svc-panel-visual"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="55" y="72" width="66" height="38" rx="8"/><circle cx="74" cy="91" r="9"/><path d="M121 78l32-18M121 104l32 18"/><line x1="55" y1="134" x2="121" y2="134"/><line x1="88" y1="110" x2="88" y2="134"/></g></svg></div>
+    </div><div class="svc-panel" data-panel="2">
+      <div>
+        <span class="step">SERVICE 03</span>
+        <h3>Tally Software</h3>
+        <p>Licensing, GST-ready setup and customization — with support that actually answers.</p>
+        <ul><li>Sales partner</li><li>Implementation</li><li>Customization</li><li>AMC support</li></ul>
+        <div class="panel-cta"><a href="services.html#tally" class="btn btn-primary"><span>Learn more</span> <span class="arr">→</span></a><a href="contact.html" class="btn btn-ghost"><span>Get a quote</span></a></div>
+      </div>
+      <div class="svc-panel-visual"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="55" y="48" width="90" height="104" rx="8"/><line x1="55" y1="84" x2="145" y2="84"/><line x1="100" y1="84" x2="100" y2="152"/><line x1="68" y1="100" x2="92" y2="100"/><line x1="68" y1="114" x2="92" y2="114"/><line x1="108" y1="100" x2="132" y2="100"/><line x1="108" y1="114" x2="132" y2="114"/></g></svg></div>
+    </div><div class="svc-panel" data-panel="3">
+      <div>
+        <span class="step">SERVICE 04</span>
+        <h3>Synology Backup</h3>
+        <p>Automatic, redundant business backup configured by an authorized partner.</p>
+        <ul><li>NAS setup</li><li>RAID config</li><li>Auto backup</li><li>Recovery plan</li></ul>
+        <div class="panel-cta"><a href="services.html#backup" class="btn btn-primary"><span>Learn more</span> <span class="arr">→</span></a><a href="contact.html" class="btn btn-ghost"><span>Get a quote</span></a></div>
+      </div>
+      <div class="svc-panel-visual"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="50" y="50" width="100" height="28" rx="6"/><rect x="50" y="86" width="100" height="28" rx="6"/><rect x="50" y="122" width="100" height="28" rx="6"/><circle cx="128" cy="64" r="5" fill="#2E97FF" fill-opacity=".4"/><circle cx="128" cy="100" r="5" fill="#FF9933" fill-opacity=".4"/><circle cx="128" cy="136" r="5" fill="#2E97FF" fill-opacity=".4"/></g></svg></div>
+    </div></div>
   </div>
 </section>
 
@@ -832,30 +840,15 @@ document.querySelectorAll('[data-count],[data-text]').forEach(el=>{
   ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:()=>countUp(el)});
 });
 
-/* ---- STICKY pinned showcase ---- */
+/* ---- SERVICE TAB SWITCHER ---- */
 (function(){
-  const slides=gsap.utils.toArray('[data-slide]');
-  const bigwords=['REPAIR','CCTV','TALLY','BACKUP'];
-  const icons=[
-    '<g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="45" y="55" width="110" height="70" rx="6"/><path d="M35 125h130l10 18H25z"/></g>',
-    '<g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="55" y="70" width="70" height="40" rx="8"/><circle cx="75" cy="90" r="9"/><path d="M125 78l30-16M125 102l30 16"/></g>',
-    '<g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="55" y="50" width="90" height="100" rx="8"/><line x1="55" y1="85" x2="145" y2="85"/><line x1="100" y1="85" x2="100" y2="150"/></g>',
-    '<g fill="none" stroke="#2E97FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="100" cy="55" rx="45" ry="16"/><path d="M55 55v90c0 9 20 16 45 16s45-7 45-16V55"/><path d="M55 100c0 9 20 16 45 16s45-7 45-16"/></g>'
-  ];
-  const bigEl=document.getElementById('pinBigword'),iconEl=document.getElementById('pinIcon');
-  const bars=document.querySelectorAll('#pinProgress .pd i');
-  function show(idx){
-    slides.forEach((s,i)=>gsap.to(s,{opacity:i===idx?1:0,y:i===idx?0:30,duration:.5,ease:'power2.out'}));
-    bigEl.textContent=bigwords[idx];iconEl.innerHTML=icons[idx];
-    bars.forEach((b,i)=>gsap.to(b,{width:i<=idx?'100%':'0%',duration:.4}));
+  const tabs=document.querySelectorAll('.svc-tab');
+  const panels=document.querySelectorAll('.svc-panel');
+  function activate(idx){
+    tabs.forEach((t,i)=>{t.classList.toggle('active',i===idx);t.setAttribute('aria-selected',i===idx);});
+    panels.forEach((p,i)=>p.classList.toggle('active',i===idx));
   }
-  if(window.innerWidth>980 && !reduce){
-    gsap.set(slides[0],{opacity:1,y:0});show(0);
-    ScrollTrigger.create({
-      trigger:'#pinTrack',start:'top top',end:'bottom bottom',scrub:true,
-      onUpdate:self=>{const idx=Math.min(slides.length-1,Math.floor(self.progress*slides.length));show(idx);}
-    });
-  }else{slides.forEach(s=>gsap.set(s,{opacity:1,y:0}));}
+  tabs.forEach((t,i)=>t.addEventListener('click',()=>activate(i)));
 })();
 
 /* ---- FORM validation ---- */
