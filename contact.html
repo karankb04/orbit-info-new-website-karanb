@@ -44,7 +44,7 @@ p{line-height:1.65}
 .btn .arr{transition:transform .3s ease}
 .btn:hover .arr{transform:translateX(4px)}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
-.logo{display:flex;align-items:center;gap:13px}
+.logo{display:flex;align-items:center;gap:0}
 .logo-mark{width:46px;height:46px;flex:none}
 .logo-mark .spin{transform-origin:32px 32px;animation:orbit 14s linear infinite}
 @keyframes orbit{to{transform:rotate(360deg)}}
@@ -53,8 +53,8 @@ p{line-height:1.65}
 .logo-word .it{color:var(--blue-bright)}
 .logo-sub{font-family:var(--body);font-weight:600;font-size:.56rem;letter-spacing:.34em;color:var(--light-grey);text-transform:uppercase;margin-top:3px}
 .logo-tag{font-family:var(--body);font-style:italic;font-size:.6rem;color:var(--gold);margin-top:2px;letter-spacing:.02em}
-.logo-img{height:52px;width:auto;display:block;object-fit:contain}
-.footer .logo-img{height:58px}
+.logo-img{height:76px;width:auto;display:block;object-fit:contain;flex:none}
+.footer .logo-img{height:82px}
 
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:padding .35s ease,background .35s ease,box-shadow .35s ease,backdrop-filter .35s ease}
 .nav.scrolled{padding:11px 0;background:rgba(8,16,36,.78);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 1px 0 var(--line),0 18px 40px -28px #000}
