@@ -91,13 +91,13 @@ p{line-height:1.65}
 .logo-mark{width:46px;height:46px;flex:none}
 .logo-mark .spin{transform-origin:32px 32px;animation:orbit 14s linear infinite}
 @keyframes orbit{to{transform:rotate(360deg)}}
-.logo-txt{display:flex;flex-direction:column;line-height:1.1;gap:5px}
-.logo-word{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:.04em;color:#fff}
+.logo-txt{display:flex;flex-direction:column;line-height:1.04;gap:4px}
+.logo-word{font-family:var(--display);font-weight:800;font-size:3rem;letter-spacing:.05em;color:#fff}
 .logo-word .it{color:var(--blue-bright)}
-.logo-sub{font-family:var(--body);font-weight:700;font-size:.82rem;letter-spacing:.3em;color:var(--light-grey);text-transform:uppercase}
-.logo-tag{font-family:var(--body);font-style:italic;font-size:.72rem;color:var(--gold);letter-spacing:.04em}
-.logo-img{height:88px;width:auto;display:block;object-fit:contain;flex:none}
-.footer .logo-img{height:96px;width:auto}
+.logo-sub{font-family:var(--body);font-weight:700;font-size:1.04rem;letter-spacing:.28em;color:var(--light-grey);text-transform:uppercase}
+.logo-tag{font-family:var(--body);font-style:italic;font-size:.86rem;color:var(--gold);letter-spacing:.03em}
+.logo-img{height:70px;width:auto;display:block;object-fit:contain;flex:none}
+.footer .logo-img{height:78px;width:auto}
 
 /* dark-on-light variant */
 .logo.ink .logo-word{color:var(--ink)}
@@ -154,7 +154,7 @@ p{line-height:1.65}
 .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(255,153,51,.6);animation:beacon 2s infinite}
 @keyframes beacon{0%{box-shadow:0 0 0 0 rgba(255,153,51,.5)}70%{box-shadow:0 0 0 9px rgba(255,153,51,0)}100%{box-shadow:0 0 0 0 rgba(255,153,51,0)}}
 .hero h1{
-  font-size:clamp(2.9rem,8vw,6.6rem);color:#fff;max-width:15ch;
+  font-size:clamp(2.1rem,5vw,3.1rem);color:#fff;max-width:18ch;
 }
 .hero h1 .grad{background:linear-gradient(100deg,var(--blue-bright),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 .word{display:inline-block;opacity:0;transform:translateY(40px)}
@@ -379,11 +379,11 @@ p{line-height:1.65}
   .wrap{padding:0 18px}
   .form-card{padding:26px}
   .hero-meta{gap:22px}
-  .logo-img{height:60px}
-  .logo-word{font-size:1.45rem}
-  .logo-sub{font-size:.65rem;letter-spacing:.2em}
-  .logo-tag{font-size:.6rem}
-  .logo{gap:7px}
+  .logo-img{height:52px}
+  .logo-word{font-size:1.95rem;letter-spacing:.04em}
+  .logo-sub{font-size:.74rem;letter-spacing:.22em}
+  .logo-tag{font-size:.66rem}
+  .logo{gap:8px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
@@ -397,7 +397,7 @@ p{line-height:1.65}
 <nav class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="index.html" class="logo" aria-label="Orbit IT Solutions home">
-      <img src="logo.png" alt="Orbit IT Solutions" class="logo-img">
+      <img src="logo-icon.png" alt="Orbit IT Solutions" class="logo-img">
       <div class="logo-txt">
         <span class="logo-word">ORB<span class="it">IT</span></span>
         <span class="logo-sub">IT Solutions</span>
@@ -722,7 +722,7 @@ p{line-height:1.65}
     <div class="footer-grid">
       <div>
         <a href="index.html" class="logo" aria-label="Orbit IT Solutions">
-          <img src="logo.png" alt="Orbit IT Solutions" class="logo-img">
+          <img src="logo-icon.png" alt="Orbit IT Solutions" class="logo-img">
           <div class="logo-txt">
             <span class="logo-word">ORB<span class="it">IT</span></span>
             <span class="logo-sub">IT Solutions</span>
