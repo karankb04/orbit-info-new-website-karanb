@@ -87,17 +87,17 @@ p{line-height:1.65}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
 
 /* ============ LOGO ============ */
-.logo{display:flex;align-items:center;gap:0}
+.logo{display:flex;align-items:center;gap:10px}
 .logo-mark{width:46px;height:46px;flex:none}
 .logo-mark .spin{transform-origin:32px 32px;animation:orbit 14s linear infinite}
 @keyframes orbit{to{transform:rotate(360deg)}}
-.logo-txt{display:flex;flex-direction:column;line-height:1}
-.logo-word{font-family:var(--display);font-weight:800;font-size:1.32rem;letter-spacing:.01em;color:#fff}
+.logo-txt{display:flex;flex-direction:column;line-height:1.1;gap:5px}
+.logo-word{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:.04em;color:#fff}
 .logo-word .it{color:var(--blue-bright)}
-.logo-sub{font-family:var(--body);font-weight:600;font-size:.56rem;letter-spacing:.34em;color:var(--light-grey);text-transform:uppercase;margin-top:3px}
-.logo-tag{font-family:var(--body);font-style:italic;font-size:.6rem;color:var(--gold);margin-top:2px;letter-spacing:.02em}
-.logo-img{height:96px;width:auto;display:block;object-fit:contain;flex:none}
-.footer .logo-img{height:100px;width:auto}
+.logo-sub{font-family:var(--body);font-weight:700;font-size:.82rem;letter-spacing:.3em;color:var(--light-grey);text-transform:uppercase}
+.logo-tag{font-family:var(--body);font-style:italic;font-size:.72rem;color:var(--gold);letter-spacing:.04em}
+.logo-img{height:88px;width:auto;display:block;object-fit:contain;flex:none}
+.footer .logo-img{height:96px;width:auto}
 
 /* dark-on-light variant */
 .logo.ink .logo-word{color:var(--ink)}
@@ -379,7 +379,11 @@ p{line-height:1.65}
   .wrap{padding:0 18px}
   .form-card{padding:26px}
   .hero-meta{gap:22px}
-  .logo-img{height:72px}
+  .logo-img{height:60px}
+  .logo-word{font-size:1.45rem}
+  .logo-sub{font-size:.65rem;letter-spacing:.2em}
+  .logo-tag{font-size:.6rem}
+  .logo{gap:7px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
@@ -394,6 +398,11 @@ p{line-height:1.65}
   <div class="wrap nav-inner">
     <a href="index.html" class="logo" aria-label="Orbit IT Solutions home">
       <img src="logo.png" alt="Orbit IT Solutions" class="logo-img">
+      <div class="logo-txt">
+        <span class="logo-word">ORB<span class="it">IT</span></span>
+        <span class="logo-sub">IT Solutions</span>
+        <span class="logo-tag">around you...</span>
+      </div>
     </a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
@@ -714,6 +723,11 @@ p{line-height:1.65}
       <div>
         <a href="index.html" class="logo" aria-label="Orbit IT Solutions">
           <img src="logo.png" alt="Orbit IT Solutions" class="logo-img">
+          <div class="logo-txt">
+            <span class="logo-word">ORB<span class="it">IT</span></span>
+            <span class="logo-sub">IT Solutions</span>
+            <span class="logo-tag">around you...</span>
+          </div>
         </a>
         <p>Mumbai's trusted IT &amp; electronic security partner since 1998. Fast. Reliable. Professional.</p>
       </div>

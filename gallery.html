@@ -44,17 +44,17 @@ p{line-height:1.65}
 .btn .arr{transition:transform .3s ease}
 .btn:hover .arr{transform:translateX(4px)}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
-.logo{display:flex;align-items:center;gap:0}
+.logo{display:flex;align-items:center;gap:10px}
 .logo-mark{width:46px;height:46px;flex:none}
 .logo-mark .spin{transform-origin:32px 32px;animation:orbit 14s linear infinite}
 @keyframes orbit{to{transform:rotate(360deg)}}
-.logo-txt{display:flex;flex-direction:column;line-height:1}
-.logo-word{font-family:var(--display);font-weight:800;font-size:1.32rem;letter-spacing:.01em;color:#fff}
+.logo-txt{display:flex;flex-direction:column;line-height:1.1;gap:5px}
+.logo-word{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:.04em;color:#fff}
 .logo-word .it{color:var(--blue-bright)}
-.logo-sub{font-family:var(--body);font-weight:600;font-size:.56rem;letter-spacing:.34em;color:var(--light-grey);text-transform:uppercase;margin-top:3px}
-.logo-tag{font-family:var(--body);font-style:italic;font-size:.6rem;color:var(--gold);margin-top:2px;letter-spacing:.02em}
-.logo-img{height:96px;width:auto;display:block;object-fit:contain;flex:none}
-.footer .logo-img{height:100px;width:auto}
+.logo-sub{font-family:var(--body);font-weight:700;font-size:.82rem;letter-spacing:.3em;color:var(--light-grey);text-transform:uppercase}
+.logo-tag{font-family:var(--body);font-style:italic;font-size:.72rem;color:var(--gold);letter-spacing:.04em}
+.logo-img{height:88px;width:auto;display:block;object-fit:contain;flex:none}
+.footer .logo-img{height:96px;width:auto}
 
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:8px 0;transition:padding .35s ease,background .35s ease,box-shadow .35s ease,backdrop-filter .35s ease}
 .nav.scrolled{padding:5px 0;background:rgba(8,16,36,.78);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 1px 0 var(--line),0 18px 40px -28px #000}
@@ -124,7 +124,11 @@ p{line-height:1.65}
 @media(max-width:560px){
   .footer-grid{grid-template-columns:1fr}
   .wrap{padding:0 18px}
-  .logo-img{height:72px}
+  .logo-img{height:60px}
+  .logo-word{font-size:1.45rem}
+  .logo-sub{font-size:.65rem;letter-spacing:.2em}
+  .logo-tag{font-size:.6rem}
+  .logo{gap:7px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
@@ -170,7 +174,7 @@ p{line-height:1.65}
 </head>
 <body>
 <nav class="nav" id="nav"><div class="wrap nav-inner">
-<a href="index.html" class="logo" aria-label="Orbit IT Solutions home"><img src="logo.png" alt="Orbit IT Solutions" class="logo-img"></a>
+<a href="index.html" class="logo" aria-label="Orbit IT Solutions home"><img src="logo.png" alt="Orbit IT Solutions" class="logo-img"><div class="logo-txt"><span class="logo-word">ORB<span class="it">IT</span></span><span class="logo-sub">IT Solutions</span><span class="logo-tag">around you...</span></div></a>
 <div class="nav-links">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -234,7 +238,7 @@ p{line-height:1.65}
 <div class="band-cta"><a href="contact.html" class="btn btn-primary"><span>Get a Free Quote</span> <span class="arr">→</span></a><a href="https://wa.me/919324032476" target="_blank" rel="noopener" class="btn btn-ghost"><span>WhatsApp Us</span></a></div></div></section>
 
 <footer class="footer"><div class="wrap"><div class="footer-grid">
-<div><a href="index.html" class="logo" aria-label="Orbit IT Solutions"><img src="logo.png" alt="Orbit IT Solutions" class="logo-img"></a>
+<div><a href="index.html" class="logo" aria-label="Orbit IT Solutions"><img src="logo.png" alt="Orbit IT Solutions" class="logo-img"><div class="logo-txt"><span class="logo-word">ORB<span class="it">IT</span></span><span class="logo-sub">IT Solutions</span><span class="logo-tag">around you...</span></div></a>
 <p>Mumbai's trusted IT &amp; electronic security partner since 1998. Fast. Reliable. Professional.</p></div>
 <div><h4>Services</h4><ul><li><a href="services.html#laptop">Laptop &amp; Desktop Repair</a></li><li><a href="services.html#cctv">CCTV Installation</a></li><li><a href="services.html#tally">Tally Software</a></li><li><a href="services.html#backup">Synology Backup</a></li></ul></div>
 <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://wa.me/919324032476" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
