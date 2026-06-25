@@ -96,8 +96,8 @@ p{line-height:1.65}
 .logo-word .it{color:var(--blue-bright)}
 .logo-sub{font-family:var(--body);font-weight:600;font-size:.56rem;letter-spacing:.34em;color:var(--light-grey);text-transform:uppercase;margin-top:3px}
 .logo-tag{font-family:var(--body);font-style:italic;font-size:.6rem;color:var(--gold);margin-top:2px;letter-spacing:.02em}
-.logo-img{height:80px;width:auto;display:block;object-fit:contain;flex:none}
-.footer .logo-img{height:88px;width:auto}
+.logo-img{height:96px;width:auto;display:block;object-fit:contain;flex:none}
+.footer .logo-img{height:100px;width:auto}
 
 /* dark-on-light variant */
 .logo.ink .logo-word{color:var(--ink)}
@@ -106,10 +106,10 @@ p{line-height:1.65}
 /* ============ NAV ============ */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:18px 0;transition:padding .35s ease,background .35s ease,box-shadow .35s ease,backdrop-filter .35s ease;
+  padding:8px 0;transition:padding .35s ease,background .35s ease,box-shadow .35s ease,backdrop-filter .35s ease;
 }
 .nav.scrolled{
-  padding:11px 0;background:rgba(8,16,36,.78);
+  padding:5px 0;background:rgba(8,16,36,.78);
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
   box-shadow:0 1px 0 var(--line),0 18px 40px -28px #000;
@@ -379,6 +379,7 @@ p{line-height:1.65}
   .wrap{padding:0 18px}
   .form-card{padding:26px}
   .hero-meta{gap:22px}
+  .logo-img{height:72px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
