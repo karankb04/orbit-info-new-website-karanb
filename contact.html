@@ -119,6 +119,7 @@ p{line-height:1.65}
 @media(max-width:980px){
   .nav-links,.nav-phone{display:none}
   .burger{display:flex}
+  .nav-cta .btn{padding:9px 14px;font-size:.8rem}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
@@ -325,7 +326,9 @@ mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.class
 gsap.registerPlugin(ScrollTrigger);
 document.querySelectorAll('.reveal').forEach(el=>{ScrollTrigger.create({trigger:el,start:'top 88%',onEnter:()=>el.classList.add('in')});});
 
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxRAqYiySkvaFWY5Z3TsNs94poEbceyndvYLSIGB4-UxrEr1TklTgE2Tbnh5bC1-hU/exec';
 const form=document.getElementById('leadForm');
+const submitBtn=form?.querySelector('[type=submit]');
 document.getElementById('service')?.addEventListener('change',e=>{e.target.classList.toggle('filled',!!e.target.value)});
 form?.addEventListener('submit',e=>{
   e.preventDefault();let ok=true;
@@ -334,7 +337,17 @@ form?.addEventListener('submit',e=>{
   set(name,!name.value.trim());
   set(phone,!/^[6-9]\d{9}$/.test(phone.value.replace(/\D/g,'').slice(-10)));
   set(svc,!svc.value);
-  if(ok){form.style.display='none';document.getElementById('formSuccess').classList.add('show');}
+  if(!ok)return;
+  submitBtn.disabled=true;submitBtn.querySelector('span').textContent='Sending…';
+  fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({
+    name:name.value.trim(),phone:phone.value.trim(),
+    service:svc.value,message:(document.getElementById('message')?.value||'').trim()
+  })}).then(()=>{
+    form.style.display='none';document.getElementById('formSuccess').classList.add('show');
+  }).catch(()=>{
+    submitBtn.disabled=false;submitBtn.querySelector('span').textContent='Send my request';
+    alert('Something went wrong. Please call us directly at 93240 32476.');
+  });
 });
 document.querySelectorAll('.fld input,.fld textarea').forEach(el=>el.addEventListener('input',()=>el.closest('.fld').classList.remove('invalid')));
 </script>
