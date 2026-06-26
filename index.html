@@ -397,7 +397,7 @@ p{line-height:1.65}
 <!-- ===== NAV ===== -->
 <nav class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo" aria-label="Orbit IT Solutions home">
+    <a href="/" class="logo" aria-label="Orbit IT Solutions home">
       <img src="logo-icon.png" alt="Orbit IT Solutions" class="logo-img">
       <div class="logo-txt">
         <span class="logo-word">ORB<span class="it">IT</span></span>
@@ -406,7 +406,7 @@ p{line-height:1.65}
       </div>
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
+      <a href="/" class="active">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Portfolio</a>
@@ -420,7 +420,7 @@ p{line-height:1.65}
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
+  <a href="/">Home</a>
   <a href="services.html">Services</a>
   <a href="about.html">About</a>
   <a href="gallery.html">Portfolio</a>
@@ -690,7 +690,8 @@ p{line-height:1.65}
     <div class="form-card reveal">
       <form id="leadForm" novalidate>
         <div class="fld"><input type="text" id="name" placeholder=" " autocomplete="name"><label for="name">Your name</label><span class="err">Please enter your name</span></div>
-        <div class="fld"><input type="tel" id="phone" placeholder=" " autocomplete="tel"><label for="phone">Phone number</label><span class="err">Enter a valid 10-digit number</span></div>
+        <div class="fld"><input type="email" id="email" placeholder=" " autocomplete="email"><label for="email">Email address</label><span class="err">Please enter a valid email</span></div>
+        <div class="fld"><input type="tel" id="phone" placeholder=" " autocomplete="tel"><label for="phone">Phone number (optional)</label></div>
         <div class="fld"><select id="service"><option value="" disabled selected hidden></option><option>Laptop / Desktop Repair</option><option>CCTV Installation</option><option>Tally Software</option><option>NAS / Synology Backup</option><option>Networking / AMC / Other</option></select><label for="service">Service needed</label><span class="err">Please choose a service</span></div>
         <div class="fld"><textarea id="message" placeholder=" "></textarea><label for="message">What's the issue? (optional)</label></div>
         <button type="submit" class="btn btn-primary"><span>Send &amp; get my quote</span> <span class="arr">→</span></button>
@@ -722,7 +723,7 @@ p{line-height:1.65}
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="logo" aria-label="Orbit IT Solutions">
+        <a href="/" class="logo" aria-label="Orbit IT Solutions">
           <img src="logo-icon.png" alt="Orbit IT Solutions" class="logo-img">
           <div class="logo-txt">
             <span class="logo-word">ORB<span class="it">IT</span></span>
@@ -847,26 +848,21 @@ document.querySelectorAll('[data-count],[data-text]').forEach(el=>{
 /* ---- FORM validation ---- */
 const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxRAqYiySkvaFWY5Z3TsNs94poEbceyndvYLSIGB4-UxrEr1TklTgE2Tbnh5bC1-hU/exec';
 const form=document.getElementById('leadForm');
-const submitBtn=form?.querySelector('[type=submit]');
 document.getElementById('service')?.addEventListener('change',e=>{e.target.classList.toggle('filled',!!e.target.value)});
 form?.addEventListener('submit',e=>{
   e.preventDefault();let ok=true;
-  const name=document.getElementById('name'),phone=document.getElementById('phone'),svc=document.getElementById('service');
+  const name=document.getElementById('name'),email=document.getElementById('email'),svc=document.getElementById('service');
   const set=(el,bad)=>{el.closest('.fld').classList.toggle('invalid',bad);if(bad)ok=false;};
   set(name,!name.value.trim());
-  set(phone,!/^[6-9]\d{9}$/.test(phone.value.replace(/\D/g,'').slice(-10)));
+  set(email,!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
   set(svc,!svc.value);
   if(!ok)return;
-  submitBtn.disabled=true;submitBtn.querySelector('span').textContent='Sending…';
   fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({
-    name:name.value.trim(),phone:phone.value.trim(),
+    name:name.value.trim(),email:email.value.trim(),
+    phone:(document.getElementById('phone')?.value||'').trim(),
     service:svc.value,message:(document.getElementById('message')?.value||'').trim()
-  })}).then(()=>{
-    form.style.display='none';document.getElementById('formSuccess').classList.add('show');
-  }).catch(()=>{
-    submitBtn.disabled=false;submitBtn.querySelector('span').textContent='Send my request';
-    alert('Something went wrong. Please call us directly at 93240 32476.');
-  });
+  })});
+  form.style.display='none';document.getElementById('formSuccess').classList.add('show');
 });
 document.querySelectorAll('.fld input,.fld textarea').forEach(el=>el.addEventListener('input',()=>el.closest('.fld').classList.remove('invalid')));
 </script>
