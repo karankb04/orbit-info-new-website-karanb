@@ -1,22 +1,22 @@
 # Orbit IT Solutions — Session Handoff
 
-**Written**: 2026-08-30 · **Repo**: `D:/Github_apps/claude/orbit-site` · **Branch**: `main`
+**Written**: 2026-08-30 · **Updated**: 2026-09-02 · **Repo**: `D:/Github_apps/claude/orbit-site` · **Branch**: `main`
 
 ## ⚠️ Read this first
 
-**Nothing from this session is committed.** `git log` still ends at `47c917b`
-("Fix image visibility") — the entire Next.js rebuild described below (60 files,
-~5,800 lines: every page, component, lib file, and the 8 brand logos) is sitting
-uncommitted in the working tree. If the next session opens a *different* folder,
-or this folder gets touched by `git checkout`/`reset`/`clean`, **this work is
-gone**. Before doing anything else, either:
+**This file is a deep-dive snapshot, not the ongoing source of truth.** A
+proper tracking system now lives in `docs/` — **read `docs/CONTEXT.md` first**
+(under 50 lines, always current); it points to `docs/IMPLEMENTATION.md` (task
+list) and `docs/DECISIONS.md` (why things are the way they are) as needed.
+This file stays useful for the full bug-by-bug narrative of how this session's
+rebuild happened, but don't treat it as current-state truth once `docs/`
+diverges from it.
 
-- Ask Claude to commit locally (not push — see the user's standing rule below), or
-- Just keep working in *this exact folder* (`D:/Github_apps/claude/orbit-site`) —
-  a new session there sees the working tree as-is, committed or not.
-
-Nothing has been pushed to GitHub/Vercel either — the live site is still the old
-static build.
+**Update, 2026-09-02**: the rebuild described below is now committed locally
+as `7099037` ("Rebuild site on Next.js 16 with SEO foundation" — 61 files,
+~5,950 lines). It is **not pushed** — the live site is still the old static
+build, and nothing goes to GitHub/Vercel without the user explicitly saying so,
+every time, no standing exceptions.
 
 ## What this project is
 
@@ -108,7 +108,7 @@ trusting the Claude_Browser pane for anything animation/observer-dependent.
 
 ## Immediate next steps, in order
 
-1. **Commit this work locally** (ask the user first — see standing rule above). Without this, "session handoff" has nothing durable to hand off.
+1. ~~Commit this work locally~~ — done, `7099037`.
 2. Convert remaining story/hero `<img>` tags to `next/image` (services/about pages).
 3. User review + explicit go-ahead before any push/deploy.
 4. Decide old-domain handling (canonical + noindex recommended, not yet implemented — no live site to redirect from yet).
