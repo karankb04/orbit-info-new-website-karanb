@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { IMAGES } from "@/lib/images";
 import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 import { buildMetadata } from "@/lib/metadata";
@@ -29,7 +31,7 @@ export default function AboutPage() {
 <p>Twenty-six years later, the work is bigger — CCTV across whole societies, backup for entire offices, Tally for businesses that have outgrown their spreadsheets. But it&rsquo;s still the same idea: be local, be fast, and actually fix the thing.</p>
 <p>We&rsquo;re the team a Mulund business owner shows to his accountant and says, &ldquo;Yaar, ye toh apna hi Orbit hai.&rdquo;</p>
 <div className="sign">The Orbit IT Solutions team<span>Mulund West, Mumbai · Since 1998</span></div></div>
-<div className="story-visual reveal"><img className="story-photo" src="/images/orbit-it-solutions-team-mumbai.jpg" alt="The Orbit IT Solutions team outside the Mulund West office" loading="lazy" /><svg className="ring" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" strokeWidth="1"><circle cx="200" cy="200" r="90" stroke="#2E97FF" opacity=".5" /><circle cx="200" cy="200" r="140" stroke="#FF9933" opacity=".3" /><circle cx="200" cy="200" r="185" stroke="#fff" opacity=".12" /></g></svg><div className="est"><div className="y">1998</div><div className="t">Established</div></div><span className="badge">Serving Mumbai &amp; Thane ever since</span></div>
+<div className="story-visual reveal"><Image className="story-photo" src={IMAGES.team.src} alt={IMAGES.team.alt} fill sizes="(max-width: 980px) 420px, 519px" /><svg className="ring" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" strokeWidth="1"><circle cx="200" cy="200" r="90" stroke="#2E97FF" opacity=".5" /><circle cx="200" cy="200" r="140" stroke="#FF9933" opacity=".3" /><circle cx="200" cy="200" r="185" stroke="#fff" opacity=".12" /></g></svg><div className="est"><div className="y">1998</div><div className="t">Established</div></div><span className="badge">Serving Mumbai &amp; Thane ever since</span></div>
 </div></div></section>
 
 <section className="mini"><div className="wrap"><div className="mini-grid">

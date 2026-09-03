@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { IMAGES } from "@/lib/images";
 import JsonLd from "@/components/JsonLd";
 import { getFaqSchema } from "@/lib/schemas";
 import { buildMetadata } from "@/lib/metadata";
@@ -117,7 +119,7 @@ export default function HomePage() {
         <ul><li>Screen &amp; hinge</li><li>Water damage</li><li>SSD upgrades</li><li>Motherboard</li></ul>
         <div className="panel-cta"><a href="/services#laptop" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
       </div>
-      <div className="svc-panel-visual"><img className="svc-panel-img" src="/images/laptop-motherboard-chip-level-repair-mumbai.jpg" alt="Orbit IT Solutions technician performing chip-level repair on an opened laptop motherboard" loading="lazy" /></div>
+      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.laptopChipRepair.src} alt={IMAGES.laptopChipRepair.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
     </div><div className="svc-panel" data-panel="1">
       <div>
         <span className="step">SERVICE 02</span>
@@ -126,7 +128,7 @@ export default function HomePage() {
         <ul><li>CP Plus</li><li>Hikvision</li><li>Panasonic</li><li>Remote view</li></ul>
         <div className="panel-cta"><a href="/services#cctv" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
       </div>
-      <div className="svc-panel-visual"><img className="svc-panel-img" src="/images/hikvision-video-door-phone-outdoor-unit.jpg" alt="Hikvision video door phone outdoor unit installed by Orbit IT Solutions" loading="lazy" /></div>
+      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.doorPhoneOutdoor.src} alt={IMAGES.doorPhoneOutdoor.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
     </div><div className="svc-panel" data-panel="2">
       <div>
         <span className="step">SERVICE 03</span>
@@ -135,7 +137,7 @@ export default function HomePage() {
         <ul><li>Sales partner</li><li>Implementation</li><li>Customization</li><li>AMC support</li></ul>
         <div className="panel-cta"><a href="/services#tally" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
       </div>
-      <div className="svc-panel-visual"><img className="svc-panel-img" src="/images/laptop-software-setup-technician.jpg" alt="Engineer configuring accounting software on a customer laptop" loading="lazy" /></div>
+      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.softwareSetup.src} alt={IMAGES.softwareSetup.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
     </div><div className="svc-panel" data-panel="3">
       <div>
         <span className="step">SERVICE 04</span>
@@ -144,7 +146,7 @@ export default function HomePage() {
         <ul><li>NAS setup</li><li>RAID config</li><li>Auto backup</li><li>Recovery plan</li></ul>
         <div className="panel-cta"><a href="/services#backup" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
       </div>
-      <div className="svc-panel-visual"><img className="svc-panel-img" src="/images/office-network-rack-patch-panel-switch.jpg" alt="Office network rack with patch panel and switch installed by Orbit IT Solutions" loading="lazy" /></div>
+      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.networkRack.src} alt={IMAGES.networkRack.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
     </div></div>
   </div>
 </section>
