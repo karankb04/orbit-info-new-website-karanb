@@ -99,6 +99,66 @@ export const IMAGES = {
     width: 874,
     height: 677,
   },
+  /**
+   * Product / equipment shots, as distinct from the first-hand photography
+   * above. These are catalogue images of the hardware Orbit sells and
+   * installs — legitimate for illustrating what is on offer, but never as
+   * portfolio evidence of a completed job (see DEC-006).
+   */
+  cctvOutdoorBullet: {
+    src: "/images/cctv-camera-outdoor-bullet-wifi.png",
+    alt: "Weatherproof outdoor Wi-Fi bullet CCTV camera of the type Orbit IT Solutions installs",
+    width: 500,
+    height: 500,
+  },
+  cctvIndoorPanTilt: {
+    src: "/images/cctv-camera-indoor-pan-tilt.png",
+    alt: "Indoor pan-and-tilt Wi-Fi CCTV camera supplied and installed by Orbit IT Solutions",
+    width: 500,
+    height: 500,
+  },
+  cctvPtzDome: {
+    src: "/images/cctv-camera-ptz-speed-dome.png",
+    alt: "CP Plus PTZ speed-dome CCTV camera for commercial and warehouse sites",
+    width: 500,
+    height: 500,
+  },
+  printer: {
+    src: "/images/multifunction-printer-sales-service.png",
+    alt: "Multi-function office printer of the type Orbit IT Solutions supplies, sets up and repairs",
+    width: 500,
+    height: 500,
+  },
+  epabx: {
+    src: "/images/epabx-intercom-system.png",
+    alt: "NEC EPABX office intercom system with desk handsets, installed and serviced by Orbit IT Solutions",
+    width: 600,
+    height: 400,
+  },
+  rackRange: {
+    src: "/images/network-rack-cabinet-range.jpg",
+    alt: "Range of floor-standing and wall-mount network rack cabinets supplied by Orbit IT Solutions",
+    width: 1600,
+    height: 1104,
+  },
+  rackAccessories: {
+    src: "/images/network-rack-accessories-shelves-pdu.jpg",
+    alt: "Network rack with fan tray, power distribution unit, shelves and cable couplers",
+    width: 1200,
+    height: 800,
+  },
+  businessLaptop: {
+    src: "/images/business-laptop-sales-service.png",
+    alt: "Business laptop of the type Orbit IT Solutions sells, upgrades and repairs",
+    width: 500,
+    height: 500,
+  },
+  peripherals: {
+    src: "/images/keyboard-mouse-peripherals.png",
+    alt: "Backlit keyboard and wireless mouse set supplied by Orbit IT Solutions",
+    width: 500,
+    height: 500,
+  },
 } as const;
 
 export type ImageKey = keyof typeof IMAGES;

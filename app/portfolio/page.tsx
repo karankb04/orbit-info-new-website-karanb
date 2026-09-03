@@ -166,6 +166,62 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+
+      {/*
+        Kept deliberately separate from the case studies above. These are
+        catalogue shots of hardware Orbit supplies — not photographs of a
+        finished job — and DEC-006 says a portfolio photo may only sit next to
+        work it genuinely depicts. Labelling the section for what it is keeps
+        that line intact.
+      */}
+      <section className="kit-sec">
+        <div className="wrap">
+          <div className="sec-head light reveal">
+            <span className="eyebrow on-light">Equipment we supply</span>
+            <h2>The hardware behind the work.</h2>
+            <p>What we source, install and service — cameras, racks, machines and office systems. Supplied genuine, set up properly, and backed by the same people who fitted it.</p>
+          </div>
+          <div className="kit-grid">
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.cctvOutdoorBullet.src} alt={IMAGES.cctvOutdoorBullet.alt} width={IMAGES.cctvOutdoorBullet.width} height={IMAGES.cctvOutdoorBullet.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Outdoor CCTV</b><span>Weatherproof Wi-Fi bullet</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.cctvIndoorPanTilt.src} alt={IMAGES.cctvIndoorPanTilt.alt} width={IMAGES.cctvIndoorPanTilt.width} height={IMAGES.cctvIndoorPanTilt.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Indoor CCTV</b><span>Pan &amp; tilt, remote view</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.cctvPtzDome.src} alt={IMAGES.cctvPtzDome.alt} width={IMAGES.cctvPtzDome.width} height={IMAGES.cctvPtzDome.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>PTZ speed dome</b><span>Commercial &amp; warehouse</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.rackRange.src} alt={IMAGES.rackRange.alt} width={IMAGES.rackRange.width} height={IMAGES.rackRange.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Network racks</b><span>Wall-mount to floor-standing</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.rackAccessories.src} alt={IMAGES.rackAccessories.alt} width={IMAGES.rackAccessories.width} height={IMAGES.rackAccessories.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Rack accessories</b><span>Shelves, PDU, fan trays</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.businessLaptop.src} alt={IMAGES.businessLaptop.alt} width={IMAGES.businessLaptop.width} height={IMAGES.businessLaptop.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Business laptops</b><span>Sales, upgrades &amp; repair</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.printer.src} alt={IMAGES.printer.alt} width={IMAGES.printer.width} height={IMAGES.printer.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Printers</b><span>Inkjet, laser &amp; multi-function</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.epabx.src} alt={IMAGES.epabx.alt} width={IMAGES.epabx.width} height={IMAGES.epabx.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>EPABX systems</b><span>Office intercom &amp; handsets</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.peripherals.src} alt={IMAGES.peripherals.alt} width={IMAGES.peripherals.width} height={IMAGES.peripherals.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Peripherals</b><span>Keyboards, mice &amp; more</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section className="band">
         <svg className="rings" viewBox="0 0 400 400" aria-hidden="true">
           <g fill="none" strokeWidth="1.2">
