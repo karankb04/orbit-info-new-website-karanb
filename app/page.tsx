@@ -25,6 +25,22 @@ export default function HomePage() {
 {/* ===== HERO ===== */}
 <header className="hero">
   <canvas id="orbitCanvas" aria-hidden="true"></canvas>
+  {/* The brand mark the orbit system revolves around — decorative here, since
+      the nav logo already names the business. Positioned by HomeEffects so it
+      always sits exactly on the canvas's orbital centre. */}
+  <div className="hero-core" id="heroCore" aria-hidden="true">
+    <span className="hero-core-plate">
+      <Image
+        src="/orbit-it-solutions-logo.png"
+        alt=""
+        width={502}
+        height={156}
+        sizes="260px"
+        className="hero-core-img"
+        priority
+      />
+    </span>
+  </div>
   <div className="hero-inner wrap">
     <span className="hero-badge" id="heroBadge"><span className="dot"></span> Mumbai's #1 IT Partner · Since 1998</span>
     <h1 id="heroH1">

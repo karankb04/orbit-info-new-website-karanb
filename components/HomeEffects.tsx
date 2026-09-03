@@ -24,76 +24,119 @@ export default function HomeEffects() {
     const canvas = document.getElementById("orbitCanvas") as HTMLCanvasElement | null;
     const ctx = canvas?.getContext("2d");
     if (canvas && ctx) {
-      let w = 0, h = 0, cx = 0, cy = 0, t = 0, raf = 0;
+      let w = 0, h = 0, cx = 0, cy = 0, R = 0, t = 0, raf = 0;
       const dpr = window.devicePixelRatio || 1;
+      const core = document.getElementById("heroCore");
 
       const size = () => {
         w = canvas.width = canvas.offsetWidth * dpr;
         h = canvas.height = canvas.offsetHeight * dpr;
-        cx = w * 0.68;
-        cy = h * 0.42;
+        const narrow = canvas.offsetWidth < 980;
+        if (narrow) {
+          /**
+           * On phones there is no room beside the copy, so the system centres
+           * behind it and is allowed to bleed off both edges. Symmetrical
+           * bleed reads as an intentional halo; the old off-centre bleed read
+           * as stray lines.
+           */
+          cx = w * 0.5;
+          cy = h * 0.52;
+          R = Math.max(w, h) * 0.34;
+        } else {
+          cx = w * 0.7;
+          cy = h * 0.5;
+          /**
+           * R is the largest radius that still fits inside the canvas on every
+           * side, with a margin. The previous version sized the rings off
+           * min(w,h) with no regard for where the centre sat, so the outer two
+           * escaped the hero entirely and read as stray lines cutting through
+           * the nav.
+           */
+          R = Math.min(w - cx, cx, cy, h - cy) * 0.86;
+        }
+        if (core) {
+          core.style.left = cx / dpr + "px";
+          core.style.top = cy / dpr + "px";
+        }
       };
       size();
       window.addEventListener("resize", size);
 
+      /**
+       * One shared tilt for every ring. Previously each ring carried its own
+       * rotation *and* spun at its own speed, so the ellipses tumbled against
+       * each other — chaotic rather than orbital. Fixing the plane and moving
+       * only the bodies is what makes it read as a system.
+       */
+      const TILT = -0.3;
       const rings = [
-        { rx: 0.30, ry: 0.12, rot: -0.4, col: "#2E97FF", sp: 0.5, a: 0.85 },
-        { rx: 0.42, ry: 0.16, rot: 0.7, col: "#FF9933", sp: -0.35, a: 0.5 },
-        { rx: 0.55, ry: 0.22, rot: 1.5, col: "#ffffff", sp: 0.22, a: 0.18 },
-        { rx: 0.68, ry: 0.27, rot: 2.4, col: "#138808", sp: -0.18, a: 0.4 },
+        { rx: 0.52, ry: 0.19, col: "#2E97FF", a: 0.75, sp: 0.55, n: 4.0 },
+        { rx: 0.72, ry: 0.26, col: "#FF9933", a: 0.55, sp: -0.38, n: 3.5 },
+        { rx: 0.92, ry: 0.33, col: "#ffffff", a: 0.16, sp: 0.26, n: 2.8 },
       ];
+      // The logo's own red/green/blue arc banding, re-used as signal ripples.
+      const ARC = ["rgba(46,151,255,", "rgba(60,200,110,", "rgba(240,70,70,"];
 
       const draw = () => {
         ctx.clearRect(0, 0, w, h);
-        const base = Math.min(w, h);
 
-        // Core glow
-        const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, base * 0.14);
-        g.addColorStop(0, "rgba(46,151,255,.9)");
-        g.addColorStop(0.5, "rgba(0,123,255,.35)");
-        g.addColorStop(1, "rgba(0,123,255,0)");
+        const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 0.75);
+        g.addColorStop(0, "rgba(46,151,255,.30)");
+        g.addColorStop(0.45, "rgba(24,90,190,.14)");
+        g.addColorStop(1, "rgba(10,30,70,0)");
         ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.arc(cx, cy, base * 0.14, 0, 7);
-        ctx.fill();
-        ctx.fillStyle = "rgba(255,255,255,.9)";
-        ctx.beginPath();
-        ctx.arc(cx, cy, base * 0.018, 0, 7);
+        ctx.arc(cx, cy, R * 0.75, 0, 7);
         ctx.fill();
 
+        // Signal ripples breathing outward from the mark — "around you...".
+        for (let i = 0; i < 2; i++) {
+          const prog = ((t * 0.13) + i / 2) % 1;
+          const rad = R * (0.34 + prog * 0.6);
+          const fade = Math.sin(prog * Math.PI) * 0.42;
+          ARC.forEach((c, k) => {
+            const rr = rad + k * 7 * dpr;
+            ctx.lineWidth = dpr * 2.1;
+            ctx.strokeStyle = c + fade + ")";
+            ctx.beginPath();
+            ctx.arc(cx, cy, rr, -2.42, -0.72);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(cx, cy, rr, 0.72, 2.42);
+            ctx.stroke();
+          });
+        }
+
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(TILT);
         rings.forEach((r, i) => {
-          ctx.save();
-          ctx.translate(cx, cy);
-          ctx.rotate(r.rot + t * r.sp);
           ctx.beginPath();
-          ctx.ellipse(0, 0, base * r.rx, base * r.ry, 0, 0, 7);
+          ctx.ellipse(0, 0, R * r.rx, R * r.ry, 0, 0, 7);
           ctx.strokeStyle = r.col;
           ctx.globalAlpha = r.a;
-          ctx.lineWidth = dpr * 1.3;
+          ctx.lineWidth = dpr * 1.2;
           ctx.stroke();
 
-          // Travelling node on each orbit
-          const ang = t * (0.8 + i * 0.3) + i;
-          const px = Math.cos(ang) * base * r.rx;
-          const py = Math.sin(ang) * base * r.ry;
+          const ang = t * r.sp + i * 2.1;
+          const px = Math.cos(ang) * R * r.rx;
+          const py = Math.sin(ang) * R * r.ry;
           ctx.globalAlpha = 1;
           ctx.fillStyle = r.col;
-          ctx.beginPath();
-          ctx.arc(px, py, dpr * 3.4, 0, 7);
-          ctx.fill();
           ctx.shadowColor = r.col;
-          ctx.shadowBlur = 18;
+          ctx.shadowBlur = 15 * dpr;
           ctx.beginPath();
-          ctx.arc(px, py, dpr * 2, 0, 7);
+          ctx.arc(px, py, dpr * r.n, 0, 7);
           ctx.fill();
           ctx.shadowBlur = 0;
-          ctx.restore();
         });
+        ctx.restore();
 
-        t += reduce ? 0 : 0.0045;
+        t += reduce ? 0 : 0.006;
         raf = requestAnimationFrame(draw);
       };
       draw();
+      if (core) core.classList.add("in");
 
       cleanups.push(() => {
         cancelAnimationFrame(raf);
