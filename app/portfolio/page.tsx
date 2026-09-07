@@ -51,9 +51,11 @@ const WORK = [
     blurb: "Tangled rack to labelled, cooled, documented setup.",
     img: IMAGES.wallRack },
 
+  // Was the video door-phone shot, which is a door intercom - not the desk
+  // phone system this tile describes.
   { size: "", cat: "network", tag: "Networking", title: "EPABX & intercom",
     blurb: "Office-wide phone system installed and extended.",
-    img: IMAGES.doorPhoneOutdoor },
+    img: IMAGES.epabx },
 
   { size: "", cat: "cctv", tag: "CCTV", title: "Commercial warehouse",
     blurb: "High-coverage cameras for a Bhandup warehouse floor." },

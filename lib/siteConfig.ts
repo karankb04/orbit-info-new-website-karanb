@@ -155,6 +155,19 @@ export const siteConfig = {
   ],
 } as const;
 
+/**
+ * Years in business, derived rather than written down.
+ *
+ * This was hardcoded as "26" in three places (the hero stat and twice in the
+ * About copy). Founded 1998, that was already two years stale — and the footer
+ * right below it renders the current year dynamically, so the site contradicted
+ * itself. Deriving it means the claim can never drift again.
+ *
+ * Evaluated at build time, which is the correct granularity: the number can
+ * only change once a year, and any deploy refreshes it.
+ */
+export const yearsInBusiness = new Date().getFullYear() - siteConfig.foundingYear;
+
 /** Full postal address as one line, for footers and plain-text contexts. */
 export const formattedAddress = [
   siteConfig.address.streetAddress,

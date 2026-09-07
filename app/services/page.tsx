@@ -5,6 +5,7 @@ import BrandRow, { BrandLogo } from "@/components/BrandRow";
 import { BRANDS } from "@/lib/brands";
 import { getBreadcrumbSchema, getServiceSchema } from "@/lib/schemas";
 import { buildMetadata } from "@/lib/metadata";
+import { yearsInBusiness } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
   title: "Services — Laptop Repair, CCTV, Tally & Backup",
@@ -61,7 +62,7 @@ export default function ServicesPage() {
 <div className="wrap phero-inner">
 <div className="crumbs"><a href="/">Home</a><span className="sep">/</span><span>Services</span></div>
 <h1>Everything your office runs on. <span className="grad">One number to call.</span></h1>
-<p>Four things we specialise in, and a dozen more we quietly handle. All local, all fast, all backed by 26 years of getting it right.</p>
+<p>Four things we specialise in, and a dozen more we quietly handle. All local, all fast, all backed by {yearsInBusiness} years of getting it right.</p>
 <div className="svc-cta-row" style={{marginTop:"34px"}}><a href="/contact#quote" className="btn btn-primary"><span>Get a Free Quote</span> <span className="arr">→</span></a><a href="https://wa.me/919324032476" target="_blank" rel="noopener" className="btn btn-ghost"><span>WhatsApp Us</span></a></div>
 </div></header>
 

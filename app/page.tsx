@@ -7,7 +7,7 @@ import LeadFormHandler from "@/components/LeadFormHandler";
 import HomeEffects from "@/components/HomeEffects";
 import Counters from "@/components/Counters";
 import BrandMarquee from "@/components/BrandMarquee";
-import { siteConfig } from "@/lib/siteConfig";
+import { siteConfig, yearsInBusiness } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
   title: `${siteConfig.name} — Mumbai's IT & Security Partner Since 1998`,
@@ -53,7 +53,7 @@ export default function HomePage() {
       <a href="https://wa.me/919324032476" target="_blank" rel="noopener" className="btn btn-ghost"><span>WhatsApp Us</span></a>
     </div>
     <div className="hero-meta" id="heroMeta">
-      <div className="m"><b>26<span className="accent">+</span></b><span>Years</span></div>
+      <div className="m"><b>{yearsInBusiness}<span className="accent">+</span></b><span>Years</span></div>
       <div className="m"><b>5000<span className="accent">+</span></b><span>Clients</span></div>
       <div className="m"><b>Same-Day</b><span>Service</span></div>
     </div>
@@ -173,7 +173,7 @@ export default function HomePage() {
   <div className="wrap">
     <div className="sec-head dark reveal">
       <span className="eyebrow on-dark">By the numbers</span>
-      <h2>26 years isn't a tagline.<br />It's the track record.</h2>
+      <h2>{yearsInBusiness} years isn&rsquo;t a tagline.<br />It's the track record.</h2>
     </div>
     <div className="stats-grid">
       <div className="stat reveal"><div className="n" data-count="26" data-suffix="+"></div><div className="l">Years in business</div></div>
@@ -250,7 +250,7 @@ export default function HomePage() {
       <h2>Serious, local, fast —<br />and we just handle it.</h2>
     </div>
     <div className="why-grid">
-      <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 2L4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z" /><path d="M9 12l2 2 4-4" /></svg></div><h3>26 years, one team</h3><p>Since 1998, the same trusted hands have served Mumbai &amp; Thane. No call centres, no runaround.</p></div>
+      <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 2L4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z" /><path d="M9 12l2 2 4-4" /></svg></div><h3>{yearsInBusiness} years, one team</h3><p>Since 1998, the same trusted hands have served Mumbai &amp; Thane. No call centres, no runaround.</p></div>
       <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg></div><h3>Same-day, around you</h3><p>We're local. When something breaks, we're already nearby — often fixed before the day is out.</p></div>
       <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20 6L9 17l-5-5" /></svg></div><h3>Certified partners</h3><p>Synology authorized &amp; Tally certified. Genuine products, proper warranties, real accountability.</p></div>
     </div>

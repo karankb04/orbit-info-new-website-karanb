@@ -310,9 +310,11 @@ p{line-height:1.65}
 .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:54px}
 .cert{position:relative;text-align:center;padding:40px 24px 32px;border-radius:20px;background:var(--off-white);border:1px solid var(--line-dark);overflow:hidden;transition:transform .3s,box-shadow .3s}
 .cert:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.cert .medal{width:78px;height:78px;margin:0 auto 20px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--off-white));border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;position:relative}
-.cert .medal::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px dashed var(--gold);opacity:.5}
-.cert .medal svg{width:34px;height:34px;color:var(--navy-700)}
+/* The generic gold "medal" icons said nothing about who the partner actually
+   is. Real marks do that job, on a white plate so every logo sits on the same
+   ground regardless of its own background. */
+.cert-logo{height:72px;max-width:180px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line-dark);border-radius:14px;padding:12px 18px}
+.cert-logo-img{max-height:40px;max-width:132px;width:auto;height:auto;object-fit:contain;display:block}
 .cert h3{font-size:1.15rem;color:var(--ink)}
 .cert p{color:var(--grey);font-size:.86rem;margin-top:6px}
 .cert .ribbon{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--blue))}
