@@ -167,7 +167,7 @@ export const IMAGES = {
    */
   societyCctvMonitors: {
     src: "/images/housing-society-cctv-monitoring-wall.jpg",
-    alt: "Live multi-camera CCTV feeds on monitors in a housing society lobby, installed by Orbit IT Solutions",
+    alt: "Live CCTV feeds on lobby monitors at a Mulund housing society, part of a 24-camera installation by Orbit IT Solutions",
     width: 1280,
     height: 960,
   },
@@ -185,7 +185,7 @@ export const IMAGES = {
   },
   societyCctvTeam: {
     src: "/images/orbit-technicians-society-cctv-handover.jpg",
-    alt: "Orbit IT Solutions technicians in uniform at a housing society after completing its CCTV installation",
+    alt: "Orbit IT Solutions technicians at a Mulund housing society after completing its 24-camera CCTV installation",
     width: 1280,
     height: 720,
   },
@@ -230,6 +230,24 @@ export const IMAGES = {
     alt: "Multi-monitor workstations set up on a trading desk",
     width: 1280,
     height: 720,
+  },
+  cozaSwitches: {
+    src: "/images/coza-glass-touch-smart-switches.jpg",
+    alt: "COZA glass touch switch panels in black and white finishes, supplied by Orbit IT Solutions",
+    width: 1280,
+    height: 853,
+  },
+  posSystem: {
+    src: "/images/pos-billing-system-touchscreen.jpg",
+    alt: "POS billing system with touchscreen terminal, cash drawer, barcode scanner and receipt printer",
+    width: 851,
+    height: 764,
+  },
+  webcam: {
+    src: "/images/zebronics-webcam-video-calls.jpg",
+    alt: "Zebronics USB webcam for office video calls, supplied by Orbit IT Solutions",
+    width: 1032,
+    height: 1280,
   },
 } as const;
 

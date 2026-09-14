@@ -242,6 +242,18 @@ export default function PortfolioPage() {
               <Image src={IMAGES.peripherals.src} alt={IMAGES.peripherals.alt} width={IMAGES.peripherals.width} height={IMAGES.peripherals.height} sizes="(max-width: 560px) 45vw, 220px" />
               <figcaption><b>Peripherals</b><span>Keyboards, mice &amp; more</span></figcaption>
             </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.cozaSwitches.src} alt={IMAGES.cozaSwitches.alt} width={IMAGES.cozaSwitches.width} height={IMAGES.cozaSwitches.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Smart touch switches</b><span>COZA glass panels</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.posSystem.src} alt={IMAGES.posSystem.alt} width={IMAGES.posSystem.width} height={IMAGES.posSystem.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>POS systems</b><span>Billing, scanner &amp; printer</span></figcaption>
+            </figure>
+            <figure className="kit-card reveal">
+              <Image src={IMAGES.webcam.src} alt={IMAGES.webcam.alt} width={IMAGES.webcam.width} height={IMAGES.webcam.height} sizes="(max-width: 560px) 45vw, 220px" />
+              <figcaption><b>Webcams</b><span>For video calls &amp; meetings</span></figcaption>
+            </figure>
           </div>
         </div>
       </section>
