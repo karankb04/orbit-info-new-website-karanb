@@ -159,6 +159,78 @@ export const IMAGES = {
     width: 500,
     height: 500,
   },
+  /**
+   * First-hand site photography supplied September 2026. These replace
+   * mismatched images (a video door-phone under the CCTV heading) and give
+   * several portfolio tiles their first real photo. Alt text describes only
+   * what is visible — no invented locations or client names.
+   */
+  societyCctvMonitors: {
+    src: "/images/housing-society-cctv-monitoring-wall.jpg",
+    alt: "Live multi-camera CCTV feeds on monitors in a housing society lobby, installed by Orbit IT Solutions",
+    width: 1280,
+    height: 960,
+  },
+  cctvBulletInstall: {
+    src: "/images/cctv-bullet-camera-outdoor-installation.jpg",
+    alt: "Orbit IT Solutions technician mounting an outdoor bullet CCTV camera on a pillar",
+    width: 720,
+    height: 1280,
+  },
+  cctvDomeInstall: {
+    src: "/images/cctv-dome-camera-ceiling-installation.jpg",
+    alt: "Technician installing a ceiling dome CCTV camera inside a building",
+    width: 720,
+    height: 1280,
+  },
+  societyCctvTeam: {
+    src: "/images/orbit-technicians-society-cctv-handover.jpg",
+    alt: "Orbit IT Solutions technicians in uniform at a housing society after completing its CCTV installation",
+    width: 1280,
+    height: 720,
+  },
+  rackLabelled: {
+    src: "/images/network-rack-labelled-patch-panels.jpg",
+    alt: "Network rack with labelled patch panels and colour-coded cabling, marked with the Orbit IT Solutions logo",
+    width: 720,
+    height: 1280,
+  },
+  rackStructured: {
+    src: "/images/structured-cabling-network-rack.jpg",
+    alt: "Floor-standing network rack with neatly patched structured cabling",
+    width: 719,
+    height: 1280,
+  },
+  rackTechnician: {
+    src: "/images/technician-patching-network-rack.jpg",
+    alt: "Orbit IT Solutions technician patching cables into a floor-standing network rack",
+    width: 720,
+    height: 1280,
+  },
+  racksOffice: {
+    src: "/images/network-racks-office-installation.jpg",
+    alt: "Wall-mount and floor-standing network racks installed in an office",
+    width: 960,
+    height: 1280,
+  },
+  wifiApInstall: {
+    src: "/images/wifi-access-point-ceiling-installation.jpg",
+    alt: "Technician installing a ceiling-mounted Wi-Fi access point",
+    width: 720,
+    height: 1280,
+  },
+  epabxHandset: {
+    src: "/images/epabx-desk-phone-handset.jpg",
+    alt: "EPABX desk phone handset installed by Orbit IT Solutions",
+    width: 719,
+    height: 1280,
+  },
+  tradingDesk: {
+    src: "/images/trading-desk-multi-monitor-workstations.jpg",
+    alt: "Multi-monitor workstations set up on a trading desk",
+    width: 1280,
+    height: 720,
+  },
 } as const;
 
 export type ImageKey = keyof typeof IMAGES;

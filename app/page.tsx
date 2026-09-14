@@ -144,7 +144,7 @@ export default function HomePage() {
         <ul><li>CP Plus</li><li>Hikvision</li><li>Panasonic</li><li>Remote view</li></ul>
         <div className="panel-cta"><a href="/services#cctv" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
       </div>
-      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.doorPhoneOutdoor.src} alt={IMAGES.doorPhoneOutdoor.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
+      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.cctvBulletInstall.src} alt={IMAGES.cctvBulletInstall.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
     </div><div className="svc-panel" data-panel="2">
       <div>
         <span className="step">SERVICE 03</span>

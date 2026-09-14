@@ -27,7 +27,8 @@ export const metadata = buildMetadata({
  */
 const WORK = [
   { size: "tall", cat: "cctv", tag: "CCTV", title: "Society-wide CCTV",
-    blurb: "24-camera setup across a Mulund housing society, full remote view." },
+    blurb: "24-camera setup across a Mulund housing society, full remote view.",
+    img: IMAGES.societyCctvTeam },
 
   { size: "", cat: "laptop", tag: "Repair", title: "Chip-level board repair",
     blurb: "Water-damaged ultrabook revived — motherboard, not replaced.",
@@ -49,13 +50,11 @@ const WORK = [
 
   { size: "", cat: "server", tag: "Backup", title: "Server room cleanup",
     blurb: "Tangled rack to labelled, cooled, documented setup.",
-    img: IMAGES.wallRack },
+    img: IMAGES.rackLabelled, pos: "center 30%" },
 
-  // Was the video door-phone shot, which is a door intercom - not the desk
-  // phone system this tile describes.
   { size: "", cat: "network", tag: "Networking", title: "EPABX & intercom",
     blurb: "Office-wide phone system installed and extended.",
-    img: IMAGES.epabx },
+    img: IMAGES.epabxHandset },
 
   { size: "", cat: "cctv", tag: "CCTV", title: "Commercial warehouse",
     blurb: "High-coverage cameras for a Bhandup warehouse floor." },
@@ -66,10 +65,29 @@ const WORK = [
     blurb: "Cracked hinge and panel replaced, same-day return." },
 
   { size: "tall", cat: "network", tag: "Networking", title: "Multi-floor cabling",
-    blurb: "Clean inter-floor networking for a growing SMB." },
+    blurb: "Clean inter-floor networking for a growing SMB.",
+    img: IMAGES.rackStructured },
 
   { size: "short", cat: "server", tag: "Backup", title: "RAID configuration",
     blurb: "Fault-tolerant storage configured and tested." },
+
+  // Added with the September 2026 site photos. Blurbs describe only what
+  // each photo shows, so no tile claims more than its picture proves.
+  { size: "tall", cat: "cctv", tag: "CCTV", title: "Camera installation",
+    blurb: "Dome and bullet cameras mounted, aimed and tested on site.",
+    img: IMAGES.cctvDomeInstall },
+
+  { size: "", cat: "network", tag: "Networking", title: "Wi-Fi access points",
+    blurb: "Ceiling-mounted access points for coverage across the floor.",
+    img: IMAGES.wifiApInstall, pos: "center 35%" },
+
+  { size: "short", cat: "network", tag: "Networking", title: "Rack patching",
+    blurb: "Cables patched, dressed and labelled into a floor rack.",
+    img: IMAGES.rackTechnician, pos: "center 25%" },
+
+  { size: "", cat: "network", tag: "Networking", title: "Trading-desk setup",
+    blurb: "Multi-monitor workstations set up and networked for a trading desk.",
+    img: IMAGES.tradingDesk },
 ];
 
 const FILTERS = [
@@ -151,6 +169,10 @@ export default function PortfolioPage() {
                       fill
                       sizes="(max-width: 560px) 100vw, (max-width: 980px) 50vw, 33vw"
                       className="tile-photo"
+                      // Most site photos are portrait but the tiles are
+                      // landscape; `pos` keeps the subject (a ceiling
+                      // device, a face) inside the crop.
+                      style={item.pos ? { objectPosition: item.pos } : undefined}
                     />
                   )}
                   <div className={`grad ${GRAD[item.cat]}`} />
