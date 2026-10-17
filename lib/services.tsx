@@ -1,4 +1,7 @@
+// .tsx because the service blocks carry their line-art SVG and the extra
+// content under each list (brand rows, cards, the distributor block) as JSX.
 import type { ReactNode } from "react";
+import type { CoreServiceId } from "@/lib/coreServices";
 import BrandRow from "@/components/BrandRow";
 import EquipmentGrid from "@/components/EquipmentGrid";
 import PosterGrid from "@/components/PosterGrid";
@@ -52,7 +55,7 @@ export const SERVICES = [
 
 /** A photo-plus-text block on /services (see components/ServiceSection). */
 export type ServiceDetail = {
-  id: "laptop" | "cctv" | "tally" | "backup";
+  id: CoreServiceId;
   num: string;
   section: "light" | "white";
   /** Photo on the right instead of the left. */

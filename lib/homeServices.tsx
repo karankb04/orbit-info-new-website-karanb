@@ -1,4 +1,6 @@
+// .tsx because each entry carries its card illustration and icon as JSX.
 import type { ReactNode } from "react";
+import type { CoreServiceId } from "@/lib/coreServices";
 import type { ImageKey } from "@/lib/images";
 
 /**
@@ -7,7 +9,7 @@ import type { ImageKey } from "@/lib/images";
  * HomeEffects switches on is the array index.
  */
 export type HomeService = {
-  id: "laptop" | "cctv" | "tally" | "backup";
+  id: CoreServiceId;
   num: string;
   /** Background class for the card photo (see globals.css). */
   bg: string;

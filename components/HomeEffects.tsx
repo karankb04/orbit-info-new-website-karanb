@@ -246,6 +246,8 @@ export default function HomeEffects() {
         tabs.forEach((tab, i) => {
           tab.classList.toggle("active", i === idx);
           tab.setAttribute("aria-selected", String(i === idx));
+          // Roving tabindex: only the selected tab is in the Tab order.
+          tab.tabIndex = i === idx ? 0 : -1;
         });
         panels.forEach((panel, i) => panel.classList.toggle("active", i === idx));
       };
@@ -254,6 +256,23 @@ export default function HomeEffects() {
         tab.addEventListener("click", h);
         return [tab, h] as const;
       });
+      // Arrow keys, Home and End move between tabs, per the WAI-ARIA tabs pattern.
+      const tablist = tabs[0].parentElement;
+      const onKey = (e: KeyboardEvent) => {
+        const cur = tabs.indexOf(document.activeElement as HTMLElement);
+        if (cur < 0) return;
+        const next =
+          e.key === "ArrowRight" ? (cur + 1) % tabs.length :
+          e.key === "ArrowLeft" ? (cur - 1 + tabs.length) % tabs.length :
+          e.key === "Home" ? 0 :
+          e.key === "End" ? tabs.length - 1 : -1;
+        if (next < 0) return;
+        e.preventDefault();
+        activate(next);
+        tabs[next].focus();
+      };
+      tablist?.addEventListener("keydown", onKey);
+      cleanups.push(() => tablist?.removeEventListener("keydown", onKey));
       cleanups.push(() =>
         handlers.forEach(([tab, h]) => tab.removeEventListener("click", h))
       );

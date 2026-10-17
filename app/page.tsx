@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { IMAGES } from "@/lib/images";
-import JsonLd from "@/components/JsonLd";
-import { getFaqSchema } from "@/lib/schemas";
 import { buildMetadata } from "@/lib/metadata";
 import LeadFormHandler from "@/components/LeadFormHandler";
 import HomeEffects from "@/components/HomeEffects";
@@ -98,14 +96,14 @@ export default function HomePage() {
     </div>
     <div className="svc-tabs reveal" role="tablist" style={{marginTop:"38px"}}>
       {HOME_SERVICES.map((svc, i) => (
-        <button key={svc.id} className={`svc-tab${i === 0 ? "  active" : ""}`} data-tab={i} aria-selected={i === 0}>{svc.tabTitle}</button>
+        <button key={svc.id} id={`svc-tab-${svc.id}`} role="tab" aria-controls={`svc-panel-${svc.id}`} tabIndex={i === 0 ? 0 : -1} className={`svc-tab${i === 0 ? "  active" : ""}`} data-tab={i} aria-selected={i === 0}>{svc.tabTitle}</button>
       ))}
     </div>
     <div className="svc-panels reveal">
       {HOME_SERVICES.map((svc, i) => {
         const img = IMAGES[svc.panelImage];
         return (
-          <div key={svc.id} className={`svc-panel${i === 0 ? "  active" : ""}`} data-panel={i}>
+          <div key={svc.id} id={`svc-panel-${svc.id}`} role="tabpanel" aria-labelledby={`svc-tab-${svc.id}`} className={`svc-panel${i === 0 ? "  active" : ""}`} data-panel={i}>
             <div>
               <span className="step">SERVICE {svc.num}</span>
               <h3>{svc.tabTitle}</h3>

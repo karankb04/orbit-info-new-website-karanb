@@ -79,7 +79,7 @@
 - Modify: `app/page.tsx`
 
 **Interfaces:**
-- Produces: `HOME_SERVICES` — four entries each with `id`, `num`, `bg`, `scene` (SVG), `icon` (SVG), `title`, `blurb`, `tabLabel`, `panelTitle`, `panelText`, `chips: string[]`, `image: ImageKey`. The card grid, tab buttons and panels in `app/page.tsx` each become one `.map`.
+- Produces: `HOME_SERVICES` — four entries each with `id`, `num`, `bg`, `scene` (SVG), `icon` (SVG), `cardTitle`, `cardBlurb`, `tabTitle` (tab label and panel heading, which were identical), `panelText`, `chips: string[]`, `panelImage: ImageKey`. The card grid, tab buttons and panels in `app/page.tsx` each become one `.map`.
 
 - [ ] **Step 1:** Implement. Tab `data-tab`/`data-panel` indexes, `active` class on index 0 and `aria-selected` values must match the baseline (HomeEffects drives them).
 - [ ] **Step 2:** Build, snapshot, diff. Expected: no output.

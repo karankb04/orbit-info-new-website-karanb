@@ -79,7 +79,7 @@ export const siteConfig = {
      * Primary, and the number used for the main call-to-action and WhatsApp.
      * E.164 for `tel:` links and schema; `display` for human-readable text.
      */
-    primary: { e164: "+919324032476", display: "93240 32476" },
+    primary: { e164: "+919324032476", display: "93240 32476", intlDisplay: "+91 93240 32476" },
     secondary: { e164: "+912235701477", display: "022-3570 1477" },
     whatsapp: "919324032476",
     /** Second mobile advertised on print material; listed for completeness. */
@@ -167,7 +167,7 @@ export const siteConfig = {
  */
 export const yearsInBusiness = new Date().getFullYear() - siteConfig.foundingYear;
 
-/** Link targets for the primary number. Pages use these, never a typed-out number. */
+/** Phone and WhatsApp link targets. Pages use these, never a typed-out number. */
 export const telHref = `tel:${siteConfig.phone.primary.e164}`;
 export const telSecondaryHref = `tel:${siteConfig.phone.secondary.e164}`;
 export const whatsappHref = `https://wa.me/${siteConfig.phone.whatsapp}`;
