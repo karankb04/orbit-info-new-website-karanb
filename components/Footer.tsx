@@ -62,8 +62,12 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>
-            © {siteConfig.foundingYear}&ndash;{new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            Copyright © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </span>
+          <nav className="legal-links" aria-label="Legal">
+            <Link href="/terms">Terms and Conditions</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+          </nav>
           <div className="tri">
             <i style={{ background: "#FF9933" }} />
             <i style={{ background: "#fff" }} />
