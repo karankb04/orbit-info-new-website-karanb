@@ -249,6 +249,52 @@ export const IMAGES = {
     width: 1032,
     height: 1280,
   },
+  /**
+   * Brand posters supplied October 2026. The poster text is baked into the
+   * image, so each alt spells out what the poster says.
+   */
+  posterCpPlusDistributor: {
+    src: "/images/cp-plus-regional-distributor-product-range.jpg",
+    alt: "CP Plus regional distributor poster: authorised regional distributor, full stock available, HD analog, IP and PTZ cameras, DVR and NVR, PoE network switches, monitors, video door phones and accessories",
+    width: 1254,
+    height: 1254,
+  },
+  posterHikvisionDistributor: {
+    src: "/images/hikvision-regional-distributor-product-range.jpg",
+    alt: "Hikvision regional distributor poster: authorised regional distributor, full stock available, analog, IP and PTZ cameras, DVR, NVR, PoE network switches, monitors, video door phones and accessories",
+    width: 1254,
+    height: 1254,
+  },
+  posterCpPlusWifi: {
+    src: "/images/cp-plus-wifi-camera-range.jpg",
+    alt: "CP Plus Wi-Fi camera range: CP-E28Q 2MP, CP-E31Q 3MP, EZ-P34Q 3MP and CP-E41Q 4MP, with remote viewing, motion detection, two-way audio, day and night vision, cloud support and Google Home",
+    width: 1254,
+    height: 1029,
+  },
+  posterSeagateSkyhawk: {
+    src: "/images/seagate-skyhawk-surveillance-hard-drives.jpg",
+    alt: "Seagate SkyHawk surveillance hard drives from 1 TB to 16 TB, ready stock, for CCTV DVR and NVR recording",
+    width: 1280,
+    height: 853,
+  },
+  posterUpsApc: {
+    src: "/images/ups-apc-online-offline-600va-20kva.jpg",
+    alt: "APC by Schneider Electric online and offline UPS range from 600 VA to 20 kVA, ready stock available",
+    width: 1536,
+    height: 1024,
+  },
+  posterUpsLuminous: {
+    src: "/images/ups-luminous-online-offline-600va-20kva.jpg",
+    alt: "Luminous online and offline UPS range from 600 VA to 20 kVA for home, office and data centre, ready stock available",
+    width: 768,
+    height: 1024,
+  },
+  posterUpsArtis: {
+    src: "/images/ups-artis-online-offline-600va-20kva.jpg",
+    alt: "Artis online and offline UPS range from 600 VA to 20 kVA for home, office, IT and CCTV, ready stock available",
+    width: 1536,
+    height: 1024,
+  },
 } as const;
 
 export type ImageKey = keyof typeof IMAGES;

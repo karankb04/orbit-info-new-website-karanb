@@ -150,8 +150,8 @@ p{line-height:1.65}
 .svc-block{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .svc-block.flip .svc-visual{order:2}
 .svc-num{font-family:var(--display);font-weight:800;font-size:1rem;color:var(--blue);letter-spacing:.12em}
-.svc-block h2{font-size:clamp(2.1rem,4.6vw,3.4rem);color:var(--ink);margin:14px 0 18px}
-.svc-block .lead-p{color:var(--grey);font-size:1.12rem}
+.svc-block h2,.svc-intro h2{font-size:clamp(2.1rem,4.6vw,3.4rem);color:var(--ink);margin:14px 0 18px}
+.svc-block .lead-p,.svc-intro .lead-p{color:var(--grey);font-size:1.12rem}
 .svc-list{list-style:none;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .svc-list li{display:flex;gap:10px;align-items:flex-start;color:var(--ink);font-weight:500;font-size:.96rem}
 .svc-list li svg{flex:none;width:20px;height:20px;color:var(--blue);margin-top:1px}
@@ -175,6 +175,15 @@ p{line-height:1.65}
 .prod-strip img{width:100%;height:96px;object-fit:contain;display:block}
 .prod-strip figcaption{margin-top:8px;font-size:.76rem;font-weight:600;color:var(--navy-700);letter-spacing:.01em}
 @media(max-width:560px){.prod-strip{grid-template-columns:1fr 1fr}}
+/* Brand posters: shown whole (never cropped), each opens full size. */
+.poster-block{margin-top:70px}
+.poster-block h3{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--ink);margin:14px 0 12px}
+.poster-block p{color:var(--grey);max-width:780px}
+.poster-block p a{color:var(--blue);font-weight:600}
+.poster-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:30px;align-items:start}
+.poster-grid a{display:block;background:#fff;border:1px solid var(--line-dark);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s ease}
+.poster-grid a:hover{transform:translateY(-4px)}
+.poster-grid img{width:100%;height:auto;display:block}
 .svc-brands{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .svc-brands .lbl{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:700;margin-right:4px}
 .brand-pill{display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line-dark);border-radius:100px;padding:8px 16px;height:42px;transition:transform .25s ease,box-shadow .25s ease}
@@ -251,12 +260,13 @@ p{line-height:1.65}
 .tile .canvas{position:relative;display:flex;align-items:flex-end;padding:22px;min-height:220px;color:#fff;overflow:hidden}
 .tile .grad{position:absolute;inset:0;z-index:2}
 .tile .art{position:absolute;z-index:3;inset:0;opacity:.55}
-/* A tile with a photograph: knock the gradient back so the picture reads
-   through it, and drop the decorative line-art entirely — the photo IS the
-   content. Tiles without a photo keep the original illustrated treatment. */
-.tile.has-photo .grad{opacity:.55}
+/* A tile with a photograph: no colour gradient over the picture, and the veil
+   only darkens the lower part where the caption sits. Tiles without a photo
+   keep the original illustrated treatment. */
+.tile.has-photo .grad{display:none}
 .tile.has-photo .art{display:none}
 .tile .veil{position:absolute;inset:0;z-index:4;background:linear-gradient(180deg,rgba(6,15,36,.05),rgba(6,15,36,.85))}
+.tile.has-photo .veil{background:linear-gradient(180deg,rgba(6,15,36,0) 40%,rgba(6,15,36,.85))}
 .tile .meta{position:relative;z-index:5}
 .tile .stag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(4px);padding:5px 11px;border-radius:100px;margin-bottom:10px}
 .tile h3{font-size:1.2rem;line-height:1.15}
@@ -633,7 +643,7 @@ section.lead .crow span{font-size:.86rem;color:var(--light-grey)}
 .svc-panel-img{width:100%;height:100%;object-fit:cover;border-radius:16px;opacity:.88}
 .svc-panel-visual{overflow:hidden;border-radius:16px}
 .bg-laptop{background-image:url('/images/laptop-motherboard-chip-level-repair-mumbai.jpg');background-size:cover;background-position:center}
-.bg-cctv{background-image:url('/images/hikvision-video-door-phone-outdoor-unit.jpg');background-size:cover;background-position:center}
+.bg-cctv{background-image:url('/images/cctv-bullet-camera-outdoor-installation.jpg');background-size:cover;background-position:center 30%}
 .bg-tally{background-image:url('/images/laptop-software-setup-technician.jpg');background-size:cover;background-position:center}
 .bg-backup{background-image:url('/images/office-network-rack-patch-panel-switch.jpg');background-size:cover;background-position:center}
 @media (prefers-reduced-motion:reduce){

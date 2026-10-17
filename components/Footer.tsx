@@ -29,6 +29,7 @@ export default function Footer() {
               <li><Link href="/services#cctv">CCTV Installation</Link></li>
               <li><Link href="/services#tally">Tally Software</Link></li>
               <li><Link href="/services#backup">Synology Backup</Link></li>
+              <li><Link href="/services#ups">UPS &amp; Power Backup</Link></li>
             </ul>
           </div>
 

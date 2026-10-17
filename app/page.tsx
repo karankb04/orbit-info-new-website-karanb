@@ -279,7 +279,7 @@ export default function HomePage() {
         <div className="fld"><input type="text" id="name" placeholder=" " autoComplete="name" /><label htmlFor="name">Your name</label><span className="err">Please enter your name</span></div>
         <div className="fld"><input type="email" id="email" placeholder=" " autoComplete="email" /><label htmlFor="email">Email address</label><span className="err">Please enter a valid email</span></div>
         <div className="fld"><input type="tel" id="phone" placeholder=" " autoComplete="tel" /><label htmlFor="phone">Phone number (optional)</label></div>
-        <div className="fld"><select id="service" defaultValue=""><option value="" disabled={true} hidden={true}></option><option>Laptop / Desktop Repair</option><option>CCTV Installation</option><option>Tally Software</option><option>NAS / Synology Backup</option><option>Networking / AMC / Other</option></select><label htmlFor="service">Service needed</label><span className="err">Please choose a service</span></div>
+        <div className="fld"><select id="service" defaultValue=""><option value="" disabled={true} hidden={true}></option><option>Laptop / Desktop Repair</option><option>CCTV Installation</option><option>Tally Software</option><option>NAS / Synology Backup</option><option>UPS / Power Backup</option><option>Networking / AMC / Other</option></select><label htmlFor="service">Service needed</label><span className="err">Please choose a service</span></div>
         <div className="fld"><textarea id="message" placeholder=" "></textarea><label htmlFor="message">What's the issue? (optional)</label></div>
         <button type="submit" className="btn btn-primary"><span>Send &amp; get my quote</span> <span className="arr">→</span></button>
       </form>
