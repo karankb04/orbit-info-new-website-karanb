@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./preview-theme.css";
+import { Poppins, Open_Sans } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -7,6 +9,10 @@ import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
 import { getLocalBusinessSchema, getWebsiteSchema } from "@/lib/schemas";
 import { siteConfig } from "@/lib/siteConfig";
+
+// Self-hosted at build time by next/font: no request to Google from the visitor.
+const poppins = Poppins({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-poppins", display: "swap" });
+const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-open-sans", display: "swap" });
 
 /**
  * Root metadata. Individual pages override title/description/canonical via
@@ -34,7 +40,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" className={`${poppins.variable} ${openSans.variable}`}>
       <head>
         {/*
           No-JS fail-safe.

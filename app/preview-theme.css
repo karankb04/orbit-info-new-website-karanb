@@ -1,0 +1,51 @@
+/* ============================================================
+   PREVIEW THEME (preview/redesign branch only)
+   From the UI UX Pro Max design system for this business
+   (design-system/orbit-it-solutions/MASTER.md): Trust & Authority
+   pattern, flat style, trust blue + orange used only for calls to
+   action, Poppins / Open Sans, no gradients or heavy shadows,
+   150-200ms transitions. Loaded after globals.css so the existing
+   stylesheet stays untouched and this file can be dropped cleanly.
+   ============================================================ */
+
+:root{
+  /* Dark sections move from near-black navy to deep trust blue. White text
+     on these stays well above 4.5:1 (#1E3A8A: 10.4:1, #1E40AF: 8.6:1). */
+  --navy-900:#172554;--navy-800:#1E3A8A;--navy-700:#1E40AF;--navy-600:#1D4ED8;
+  --blue:#1E40AF;--blue-strong:#1E40AF;
+  /* Light accent text on the blue sections (8.1:1 on #172554). */
+  --blue-bright:#93C5FD;
+  /* CTA orange. #C2410C carries white text at 5.2:1; the tool's #EA580C
+     needs black text, which reads poorly on a button this size. */
+  --accent:#C2410C;--accent-hover:#9A3412;
+  --off-white:#EFF6FF;--ink:#172554;--grey:#475569;
+  --line-dark:#BFDBFE;
+  --r:12px;
+  --shadow:none;--shadow-blue:none;
+  --display:var(--font-poppins),system-ui,sans-serif;
+  --body:var(--font-open-sans),system-ui,sans-serif;
+}
+
+/* ---------- Flat: no decorative gradients or drop shadows ---------- */
+.band,.finale{background:var(--navy-900)}
+.kit-card,.blog-card,.cert,.why-card,.val,.sec2-card,.poster-grid a,.form-card,.tile,.svc-visual,.stat{box-shadow:none!important}
+.kit-card,.blog-card,.cert,.why-card,.val,.poster-grid a{border:1px solid var(--line-dark)}
+.kit-card:hover,.blog-card:hover,.cert:hover,.why-card:hover,.poster-grid a:hover{transform:none;border-color:var(--blue)}
+.svc-card:hover,.tile:hover{transform:none}
+
+/* ---------- Buttons: orange for the main call to action only ---------- */
+.btn{border-radius:10px;transition:background-color .18s ease,border-color .18s ease,color .18s ease}
+.btn-primary{background:var(--accent);box-shadow:none}
+.btn-primary::after{display:none}
+.btn-primary:hover{background:var(--accent-hover);transform:none}
+.btn-ghost:hover{transform:none}
+
+/* ---------- Typography ---------- */
+h1,h2,h3,h4{letter-spacing:-.01em}
+.eyebrow::before{background:var(--accent)}
+
+/* ---------- Motion: shorter, calmer ---------- */
+.reveal{transition-duration:.35s!important}
+
+/* ---------- Text on the new blues ---------- */
+.hero h1 .grad,.phero h1 .grad,.band h2 .grad,.finale h2 .grad,.c-left h2 .grad{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--blue-bright)}
