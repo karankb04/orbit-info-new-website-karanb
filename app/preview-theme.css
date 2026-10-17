@@ -49,3 +49,62 @@ h1,h2,h3,h4{letter-spacing:-.01em}
 
 /* ---------- Text on the new blues ---------- */
 .hero h1 .grad,.phero h1 .grad,.band h2 .grad,.finale h2 .grad,.c-left h2 .grad{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--blue-bright)}
+
+/* ============================================================
+   NAV (preview): solid white bar, logo without its white plate,
+   dark readable links, a Services menu, one orange CTA.
+   ============================================================ */
+.nav{background:#fff;border-bottom:1px solid #DBEAFE;padding:0;transition:box-shadow .18s ease}
+.nav.scrolled{padding:0;background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 2px 10px -4px rgba(23,37,84,.18)}
+.nav-inner{min-height:72px;gap:24px}
+/* On white the logo needs no plate. */
+.nav .logo-plate{background:none;box-shadow:none;padding:0;border-radius:0}
+.nav .logo:hover .logo-plate{transform:none;box-shadow:none}
+.nav .logo-img{height:44px}
+
+.nav-links{gap:6px}
+.nav-links > a,.nav-dd-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:8px;font-family:var(--display);font-weight:500;font-size:.95rem;color:var(--ink);background:none;border:0;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.nav-links > a::after{display:none}
+.nav-links > a:hover,.nav-dd-btn:hover,.nav-dd.open .nav-dd-btn{background:#EFF6FF;color:var(--blue)}
+.nav-links > a.active,.nav-dd-btn.active{color:var(--blue);background:#EFF6FF}
+.nav-dd-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .15s ease}
+.nav-dd.open .nav-dd-btn svg{transform:rotate(180deg)}
+
+/* Services menu */
+.nav-dd{position:relative}
+.nav-dd-panel{position:absolute;top:calc(100% + 10px);left:50%;width:340px;transform:translate(-50%,-4px);background:#fff;border:1px solid #DBEAFE;border-radius:12px;box-shadow:0 18px 40px -16px rgba(23,37,84,.35);padding:8px;opacity:0;visibility:hidden;transition:opacity .15s ease,transform .15s ease,visibility 0s .15s}
+.nav-dd.open .nav-dd-panel{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .15s ease,transform .15s ease,visibility 0s}
+.nav-dd-panel ul{list-style:none}
+.nav-dd-panel li a{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:8px;transition:background-color .15s ease}
+.nav-dd-panel li a:hover,.nav-dd-panel li a:focus-visible{background:#EFF6FF}
+.nav-dd-panel b{font-family:var(--display);font-weight:600;font-size:.94rem;color:var(--ink)}
+.nav-dd-panel span{font-size:.82rem;color:var(--grey)}
+.nav-dd-all{display:flex;align-items:center;gap:6px;min-height:44px;margin-top:4px;padding:0 12px;border-top:1px solid #DBEAFE;font-weight:600;font-size:.9rem;color:var(--blue)}
+
+/* Right side: plain phone link, one orange button */
+.nav-phone{color:var(--ink);font-family:var(--display);font-weight:600;min-height:44px}
+.nav-phone svg{color:var(--blue);animation:none}
+.nav-cta .btn{padding:0 20px;min-height:44px;font-size:.92rem}
+.nav-call,.burger{border-color:#DBEAFE;background:#fff;color:var(--blue)}
+.burger span{background:var(--ink)}
+
+/* Mobile: logo, call, menu. The quote button lives inside the menu. */
+@media(max-width:980px){
+  .nav-inner{min-height:64px}
+  .nav .logo-img{height:38px}
+  .nav-cta{display:none}
+  .nav-call{margin-left:auto}
+  .mobile-menu{inset:64px 0 auto 0;width:auto;max-height:calc(100svh - 64px);overflow-y:auto;background:#fff;border-bottom:1px solid #DBEAFE;padding:12px 20px 24px;transform:translateY(-8px);opacity:0;box-shadow:0 18px 30px -18px rgba(23,37,84,.35);transition:transform .2s ease,opacity .2s ease,visibility 0s .2s}
+  .mobile-menu.open{transform:none;opacity:1;transition:transform .2s ease,opacity .2s ease,visibility 0s}
+  .mobile-menu a{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink);border-bottom:1px solid #EFF6FF;padding:0;min-height:48px;display:flex;align-items:center}
+  .mobile-menu a.active{color:var(--blue)}
+  .mm-sub{list-style:none;padding-left:14px;border-left:2px solid #DBEAFE;margin:4px 0 8px}
+  .mm-sub a{font-family:var(--body);font-weight:500;font-size:.95rem;color:var(--grey);min-height:44px;border-bottom:0}
+  .mobile-menu .btn{margin-top:14px;width:100%;justify-content:center;border-bottom:0}
+  .mobile-menu .btn-primary{color:#fff}
+  .mobile-menu:not(.open){visibility:hidden;transition:transform .2s ease,opacity .2s ease,visibility 0s .2s}
+}
+/* The panel sits inside .nav-links, so out-rank the old `.nav-links a` rules. */
+.nav-links .nav-dd-panel a{color:var(--ink)}
+.nav-links .nav-dd-panel a::after{display:none}
+.nav-links .nav-dd-panel .nav-dd-all{color:var(--blue)}
