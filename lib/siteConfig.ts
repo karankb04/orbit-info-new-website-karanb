@@ -40,7 +40,7 @@ export const siteConfig = {
 
   tagline: "around you...",
   description:
-    "Mumbai's IT and electronic security partner since 1998 — laptop and desktop repair, CCTV installation, Tally software and Synology backup for businesses across Mumbai and Thane.",
+    "Mumbai's IT and electronic security partner since 1998, offering laptop and desktop repair, CCTV installation, Tally software and Synology backup for businesses across Mumbai and Thane.",
 
   /**
    * Canonical origin. No trailing slash — every URL helper appends its own,

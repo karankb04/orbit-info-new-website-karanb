@@ -6,9 +6,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata = buildMetadata({
-  title: "Blog — IT, CCTV & Backup Advice for Mumbai Businesses",
+  title: "Blog: IT, CCTV & Backup Advice for Mumbai Businesses",
   description:
-    "Practical advice on laptop repair, CCTV installation, Tally and data backup from Orbit IT Solutions — Mumbai's IT partner since 1998.",
+    "Practical advice on laptop repair, CCTV installation, Tally and data backup from Orbit IT Solutions, Mumbai's IT partner since 1998.",
   path: "/blog",
 });
 

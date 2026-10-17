@@ -18,7 +18,7 @@ export default function Footer() {
             <Logo />
             <p>
               Mumbai&rsquo;s trusted IT &amp; electronic security partner since{" "}
-              {siteConfig.foundingYear}. Fast. Reliable. Professional.
+              {siteConfig.foundingYear}.
             </p>
           </div>
 
@@ -67,7 +67,7 @@ export default function Footer() {
             <i style={{ background: "#FF9933" }} />
             <i style={{ background: "#fff" }} />
             <i style={{ background: "#138808" }} />
-            <span style={{ marginLeft: 8 }}>Proudly serving Mumbai &amp; Thane</span>
+            <span style={{ marginLeft: 8 }}>Serving Mumbai &amp; Thane</span>
           </div>
         </div>
       </div>

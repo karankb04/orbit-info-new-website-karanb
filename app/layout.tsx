@@ -15,7 +15,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Mumbai's IT & Security Partner Since 1998`,
+    default: `${siteConfig.name} | Mumbai's IT & Security Partner Since 1998`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

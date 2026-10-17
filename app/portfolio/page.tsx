@@ -7,7 +7,7 @@ import PortfolioFilters from "@/components/PortfolioFilters";
 import { IMAGES } from "@/lib/images";
 
 export const metadata = buildMetadata({
-  title: "Portfolio — Our Work Across Mumbai & Thane",
+  title: "Portfolio: Our Work Across Mumbai & Thane",
   description:
     "Projects delivered by Orbit IT Solutions: society and commercial CCTV, chip-level laptop repair, structured office cabling, EPABX and Synology backup across Mumbai & Thane.",
   path: "/portfolio",
@@ -31,7 +31,7 @@ const WORK = [
     img: IMAGES.societyCctvTeam },
 
   { size: "", cat: "laptop", tag: "Repair", title: "Chip-level board repair",
-    blurb: "Water-damaged ultrabook revived — motherboard, not replaced.",
+    blurb: "Water-damaged ultrabook revived by repairing the motherboard, not replacing it.",
     img: IMAGES.laptopChipRepair },
 
   { size: "short", cat: "network", tag: "Networking", title: "Office network rollout",
@@ -203,7 +203,7 @@ export default function PortfolioPage() {
           <div className="sec-head light reveal">
             <span className="eyebrow on-light">Equipment we supply</span>
             <h2>The hardware behind the work.</h2>
-            <p>What we source, install and service — cameras, racks, machines and office systems. Supplied genuine, set up properly, and backed by the same people who fitted it.</p>
+            <p>Cameras, racks, machines and office systems we source, install and service. Everything is genuine, and the people who fit it are the ones you call later.</p>
           </div>
           <div className="kit-grid">
             <figure className="kit-card reveal">
@@ -268,7 +268,7 @@ export default function PortfolioPage() {
         </svg>
         <div className="wrap band-inner">
           <h2>Your project could be next.</h2>
-          <p>Tell us what you need installed, fixed or backed up. We&rsquo;ll make it look this good.</p>
+          <p>Tell us what you need installed, fixed or backed up. We&rsquo;ll do it to the same standard.</p>
           <div className="band-cta">
             <a href="/contact#quote" className="btn btn-primary">
               <span>Get a Free Quote</span> <span className="arr">→</span>

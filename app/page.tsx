@@ -10,9 +10,9 @@ import BrandMarquee from "@/components/BrandMarquee";
 import { siteConfig, yearsInBusiness } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
-  title: `${siteConfig.name} — Mumbai's IT & Security Partner Since 1998`,
+  title: `${siteConfig.name} | Mumbai's IT & Security Partner Since 1998`,
   description:
-    "Laptop & desktop repair, CCTV installation, Tally software, and Synology backup for businesses across Mumbai & Thane. Fast. Reliable. Professional. Since 1998.",
+    "Laptop & desktop repair, CCTV installation, Tally software, and Synology backup for businesses across Mumbai & Thane. Based in Mulund West since 1998.",
   path: "/",
 });
 
@@ -42,12 +42,12 @@ export default function HomePage() {
     </span>
   </div>
   <div className="hero-inner wrap">
-    <span className="hero-badge" id="heroBadge"><span className="dot"></span> Mumbai's #1 IT Partner · Since 1998</span>
+    <span className="hero-badge" id="heroBadge"><span className="dot"></span> Mulund West, Mumbai · Since 1998</span>
     <h1 id="heroH1">
       <span className="word">When</span> <span className="word">tech</span> <span className="word">breaks,</span><br />
       <span className="word grad">we're</span> <span className="word grad">around</span> <span className="word grad">you.</span>
     </h1>
-    <p className="hero-sub" id="heroSub">Laptop &amp; desktop repair, CCTV, Tally, and Synology backup for businesses across Mumbai &amp; Thane. You call — we handle it. Fast, reliable, and right the first time.</p>
+    <p className="hero-sub" id="heroSub">Laptop &amp; desktop repair, CCTV, Tally, and Synology backup for businesses across Mumbai &amp; Thane. You call, we handle it, and most jobs are done the same day.</p>
     <div className="hero-cta" id="heroCta">
       <a href="/contact#quote" className="btn btn-primary"><span>Get a Free Quote</span> <span className="arr">→</span></a>
       <a href="https://wa.me/919324032476" target="_blank" rel="noopener" className="btn btn-ghost"><span>WhatsApp Us</span></a>
@@ -65,8 +65,8 @@ export default function HomePage() {
   <div className="wrap">
     <div className="sec-head light reveal">
       <span className="eyebrow on-light">What we do</span>
-      <h2>Four things we do<br />better than anyone in Mulund.</h2>
-      <p>From a cracked screen to a building full of cameras — one local team that picks up the phone and shows up.</p>
+      <h2>Four services,<br />one local team.</h2>
+      <p>We fix cracked laptop screens and we wire whole buildings with cameras. Either way, the same team answers the phone and turns up.</p>
     </div>
     <div className="svc-grid">
 
@@ -77,7 +77,7 @@ export default function HomePage() {
         <span className="num">01</span>
         <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M2 20h20l-2-3H4z" /></svg></div>
         <h3>Laptop &amp; Desktop Repair</h3>
-        <p>Screens, hinges, water damage, SSD upgrades — and chip-level motherboard work others won't touch.</p>
+        <p>Screens, hinges, water damage and SSD upgrades, plus chip-level motherboard repair that many shops won't take on.</p>
         <span className="go">Get Free Quote <span className="arr">→</span></span>
       </a>
 
@@ -88,7 +88,7 @@ export default function HomePage() {
         <span className="num">02</span>
         <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M3 8l14-4 2 6-14 4z" /><circle cx="10" cy="9" r="2.2" /><path d="M6 14v5M6 19h7" /></svg></div>
         <h3>CCTV Installation</h3>
-        <p>Homes, offices, societies &amp; commercial sites. CP Plus, Hikvision &amp; Panasonic — installed clean, set up right.</p>
+        <p>Homes, offices, societies &amp; commercial sites. We install CP Plus, Hikvision &amp; Panasonic cameras with neat cabling.</p>
         <span className="go">Get Free Quote <span className="arr">→</span></span>
       </a>
 
@@ -99,7 +99,7 @@ export default function HomePage() {
         <span className="num">03</span>
         <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="4" y="3" width="16" height="18" rx="2" /><line x1="8" y1="8" x2="16" y2="8" /><line x1="8" y1="12" x2="16" y2="12" /><line x1="8" y1="16" x2="12" y2="16" /></svg></div>
         <h3>Tally Software</h3>
-        <p>Certified sales &amp; implementation partner — licensing, customization and support that keeps your books moving.</p>
+        <p>Certified sales &amp; implementation partner. We handle licensing, customization and support.</p>
         <span className="go">Get Free Quote <span className="arr">→</span></span>
       </a>
 
@@ -124,7 +124,7 @@ export default function HomePage() {
   <div className="wrap">
     <div className="sec-head dark reveal" style={{marginBottom:"0"}}>
       <span className="eyebrow on-dark">What we do</span>
-      <h2 style={{marginTop:"16px"}}>Four things we do<br />better than anyone in Mulund.</h2>
+      <h2 style={{marginTop:"16px"}}>Four services,<br />one local team.</h2>
     </div>
     <div className="svc-tabs reveal" role="tablist" style={{marginTop:"38px"}}><button className="svc-tab  active" data-tab="0" aria-selected="true">Laptop Repair</button><button className="svc-tab" data-tab="1" aria-selected="false">CCTV Setup</button><button className="svc-tab" data-tab="2" aria-selected="false">Tally Software</button><button className="svc-tab" data-tab="3" aria-selected="false">Synology Backup</button></div>
     <div className="svc-panels reveal"><div className="svc-panel  active" data-panel="0">
@@ -149,7 +149,7 @@ export default function HomePage() {
       <div>
         <span className="step">SERVICE 03</span>
         <h3>Tally Software</h3>
-        <p>Licensing, GST-ready setup and customization — with support that actually answers.</p>
+        <p>Licensing, GST-ready setup and customization, and support that answers the phone.</p>
         <ul><li>Sales partner</li><li>Implementation</li><li>Customization</li><li>AMC support</li></ul>
         <div className="panel-cta"><a href="/services#tally" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
       </div>
@@ -173,10 +173,10 @@ export default function HomePage() {
   <div className="wrap">
     <div className="sec-head dark reveal">
       <span className="eyebrow on-dark">By the numbers</span>
-      <h2>{yearsInBusiness} years isn&rsquo;t a tagline.<br />It's the track record.</h2>
+      <h2>{yearsInBusiness} years of fixing things<br />for Mumbai businesses.</h2>
     </div>
     <div className="stats-grid">
-      <div className="stat reveal"><div className="n" data-count="26" data-suffix="+"></div><div className="l">Years in business</div></div>
+      <div className="stat reveal"><div className="n" data-count={yearsInBusiness} data-suffix="+"></div><div className="l">Years in business</div></div>
       <div className="stat reveal"><div className="n" data-count="5000" data-suffix="+"></div><div className="l">Clients served</div></div>
       <div className="stat reveal"><div className="n" data-count="15" data-suffix="+"></div><div className="l">Brands supported</div></div>
       <div className="stat reveal"><div className="n" data-text="Same-Day"></div><div className="l">Service response</div></div>
@@ -230,10 +230,10 @@ export default function HomePage() {
     </div>
     <div className="reveal">
       <span className="eyebrow on-light">The craft</span>
-      <h2 style={{fontSize:"clamp(2rem,4.5vw,3.2rem)",color:"var(--ink)",marginTop:"18px"}}>Chip-level repairs.<br />Done right. Done fast.</h2>
-      <p style={{marginTop:"18px",color:"var(--grey)",fontSize:"1.08rem"}}>Most shops swap the whole board and bill you for it. We diagnose down to the component — and fix what's actually broken.</p>
+      <h2 style={{fontSize:"clamp(2rem,4.5vw,3.2rem)",color:"var(--ink)",marginTop:"18px"}}>Chip-level repairs,<br />usually the same day.</h2>
+      <p style={{marginTop:"18px",color:"var(--grey)",fontSize:"1.08rem"}}>Many shops swap the whole board and bill you for it. We trace the fault to the component and fix that part.</p>
       <div className="feat">
-        <div className="row"><span className="tick">✓</span><div><b>Component-level diagnosis</b><p>Micro-soldering, IC replacement, power-rail repair — not guesswork.</p></div></div>
+        <div className="row"><span className="tick">✓</span><div><b>Component-level diagnosis</b><p>Micro-soldering, IC replacement and power-rail repair.</p></div></div>
         <div className="row"><span className="tick">✓</span><div><b>Honest, upfront quotes</b><p>You approve the price before we open a single screw.</p></div></div>
         <div className="row"><span className="tick">✓</span><div><b>Same-day turnaround</b><p>Most laptop &amp; desktop jobs back in your hands the same day.</p></div></div>
       </div>
@@ -247,12 +247,12 @@ export default function HomePage() {
   <div className="wrap">
     <div className="sec-head light reveal">
       <span className="eyebrow on-light">Why Orbit</span>
-      <h2>Serious, local, fast —<br />and we just handle it.</h2>
+      <h2>Why Mulund businesses<br />call Orbit.</h2>
     </div>
     <div className="why-grid">
-      <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 2L4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z" /><path d="M9 12l2 2 4-4" /></svg></div><h3>{yearsInBusiness} years, one team</h3><p>Since 1998, the same trusted hands have served Mumbai &amp; Thane. No call centres, no runaround.</p></div>
-      <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg></div><h3>Same-day, around you</h3><p>We're local. When something breaks, we're already nearby — often fixed before the day is out.</p></div>
-      <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20 6L9 17l-5-5" /></svg></div><h3>Certified partners</h3><p>Synology authorized &amp; Tally certified. Genuine products, proper warranties, real accountability.</p></div>
+      <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 2L4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z" /><path d="M9 12l2 2 4-4" /></svg></div><h3>{yearsInBusiness} years, one team</h3><p>The same team has looked after Mumbai &amp; Thane businesses since 1998. You talk to us directly, not a call centre.</p></div>
+      <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg></div><h3>Same-day, around you</h3><p>We're local, so when something breaks we're already nearby, and it's often fixed the same day.</p></div>
+      <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20 6L9 17l-5-5" /></svg></div><h3>Certified partners</h3><p>Synology authorized &amp; Tally certified. We sell genuine products with proper warranties and stand behind our work.</p></div>
     </div>
   </div>
 </section>
@@ -267,7 +267,7 @@ export default function HomePage() {
     <div className="reveal">
       <span className="eyebrow on-dark">Free quote</span>
       <h2>Tell us what broke.<br />We'll tell you the fix.</h2>
-      <p className="lead-sub">One message and a real person from Orbit gets back to you — usually within the hour, during shop hours.</p>
+      <p className="lead-sub">Send one message and a real person from Orbit replies, usually within the hour during shop hours.</p>
       <div className="contact-rows">
         <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg></span><div><b>022-3570 1477 · 93240 32476</b><span>Mon–Sat, 10:30 – 20:00</span></div></div>
         <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg></span><div><b>B-148 Shanti Industrial Estate</b><span>Mulund West, Mumbai</span></div></div>
@@ -286,7 +286,7 @@ export default function HomePage() {
       <div className="form-success" id="formSuccess">
         <div className="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg></div>
         <h3>Got it. We're on it.</h3>
-        <p>Thanks — we'll call you back shortly. Need us now? <a href="https://wa.me/919324032476" style={{color:"var(--blue-bright)",fontWeight:"600"}}>WhatsApp us →</a></p>
+        <p>Thanks, we'll call you back shortly. Need us now? <a href="https://wa.me/919324032476" style={{color:"var(--blue-bright)",fontWeight:"600"}}>WhatsApp us →</a></p>
       </div>
     </div>
   </div>
@@ -297,7 +297,7 @@ export default function HomePage() {
   <svg className="rings" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" strokeWidth="1.2"><circle cx="200" cy="200" r="70" stroke="#2E97FF" /><circle cx="200" cy="200" r="120" stroke="#FF9933" opacity=".6" /><circle cx="200" cy="200" r="170" stroke="#138808" opacity=".4" /><circle cx="200" cy="200" r="195" stroke="#fff" opacity=".15" /></g></svg>
   <div className="wrap finale-inner">
     <h2>Got an IT problem?<br /><span className="grad">We're around you.</span></h2>
-    <p>One call to Orbit and it's handled — fast, reliable, professional. The way Mumbai's done it since 1998.</p>
+    <p>Call Orbit and we'll take it from there. Mumbai businesses have been doing that since 1998.</p>
     <div className="finale-cta">
       <a href="tel:+919324032476" className="btn btn-primary"><span>Call 93240 32476</span></a>
       <a href="https://wa.me/919324032476" target="_blank" rel="noopener" className="btn btn-ghost"><span>Chat on WhatsApp</span></a>
