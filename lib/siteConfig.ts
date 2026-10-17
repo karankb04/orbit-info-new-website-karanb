@@ -135,8 +135,7 @@ export const siteConfig = {
     "https://www.justdial.com/Mumbai/Orbit-Info-Systems-Tambe-Nagar-Mulund-West/022P1100215_BZDET",
     "https://www.indiamart.com/orbitinfo-systems/aboutus.html",
     "https://www.tradeindia.com/orbit-info-systems-3108410/",
-    // LinkedIn omitted: the URL supplied was an /admin/dashboard/ link, which is
-    // private. Add the PUBLIC company page URL here once available.
+    "https://www.linkedin.com/company/orbit-info-systems-mumbai/",
   ],
 
   /**

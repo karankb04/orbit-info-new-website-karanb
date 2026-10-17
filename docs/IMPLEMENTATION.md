@@ -38,14 +38,21 @@ site/directories, which actively hurts local search ranking).
 - [x] Fixed two CSS class collisions (`.val`, `.lead`) from merging five stylesheets into one
 - [x] Ported 115 lines of home-page inline JS that were dropped during an earlier static-site edit (hero canvas, intro stagger, card reveal, counters, tab switcher) — without the GSAP dependency
 - [x] Committed the full rebuild locally (`7099037`) — 61 files, ~5,950 lines
+- [x] Remaining hero/story `<img>` tags converted to `next/image` (`a3d5c5b`) — only the small brand logos in `components/BrandRow.tsx` still use `<img>`, deliberately
+- [x] Full brand lockup as logo, hero orbit animation rebuilt (`f3a3799`)
+- [x] Real brand logos on /services and certification cards, product imagery (`603edb8`, `28b864d`)
+- [x] "Years in business" derived from founding year instead of hardcoded in 8 places (`28b864d`)
+- [x] 2026 timeline entry naming the former trading name (`a9fb7e3`)
+- [x] 14 of the 40 September site photos added: CCTV, networking, portfolio, equipment (`461b5bc`, `264680f`) — residents' names blurred
+- [x] Pushed to GitHub; Vercel project `orbit-info-new-website-karanb-1adp` auto-deploys `main` to production
+- [x] LinkedIn public company page added to `sameAs`
 
 ### Not done
 
-- [ ] Story/hero `<img>` tags on services/about pages still bypass `next/image` (~900KB/page unoptimized) — portfolio images already converted, these weren't
-- [ ] No redirects/noindex set up on the old domain (`orbitinfosystems.com`) yet — nothing to redirect *to* until this site is deployed
-- [ ] LinkedIn `sameAs` entry missing — supplied URL was a private `/admin/dashboard/` link, need the public company page
+- [ ] **Attach `orbititsolutions.in` to the Vercel project.** As of 2026-10-17 the only Vercel domain is the `*.vercel.app` one, and `orbititsolutions.in` 301s to the old site (`www.orbitinfosystems.com`, IIS). The new site is not live on its own domain yet.
+- [ ] Redirects/noindex on the old domain — **must wait** until the item above is done; noindexing now would de-index the only live site
+- [ ] 26 unused September photos in `public/images/14 september new/` (untracked) — mostly near-duplicates and group/event shots; decide whether any are worth using (office team shots for /about, CCTV showroom display) and move the raw originals out of `public/`
 - [ ] Directory renames (JustDial/IndiaMART/TradeIndia → "Orbit IT Solutions") — user said not a priority, doesn't block anything
-- [ ] Push to GitHub / deploy to Vercel — nothing pushed yet, live site is still the old static build
 - [ ] Delete superseded static `.html` files + duplicate logo files at repo root (not deleted, not yet confirmed safe to remove)
 - [ ] Bing Webmaster Tools registration for the new domain (GSC done, Bing pending)
 
@@ -86,6 +93,6 @@ See: `chronicles/phase-2-real-photos.md`
 - Entity-clarity pass so AI answer engines can cite the business confidently
 
 ### Phase 6: Launch
-- Push to GitHub, deploy to Vercel
+- ~~Push to GitHub, deploy to Vercel~~ (done in Phase 3)
 - Point domain + GBP at the new site
 - Canonical + noindex on the old domain
