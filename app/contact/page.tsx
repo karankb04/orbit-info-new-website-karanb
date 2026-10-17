@@ -2,7 +2,7 @@ import JsonLd from "@/components/JsonLd";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 import { buildMetadata } from "@/lib/metadata";
 import LeadFormHandler from "@/components/LeadFormHandler";
-import { siteConfig } from "@/lib/siteConfig";
+import { siteConfig, yearsInBusiness } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
   title: "Contact Orbit IT Solutions, Mulund West, Mumbai",
@@ -63,7 +63,7 @@ export default function ContactPage() {
     <div className="c-right reveal">
       <div className="form-card" id="quote">
         <form id="leadForm" noValidate={true}>
-          <div className="fh"><h3>Request a free quote</h3><p>Fill this in and we&rsquo;ll get back to you within working hours, usually much sooner.</p></div>
+          <div className="fh"><h3>Request a free quote</h3><p>Fill this in and we&rsquo;ll get back to you within working hours, usually much sooner.</p><p className="trust-line">{yearsInBusiness}+ years · 5000+ clients · Authorised CP Plus &amp; Hikvision distributor</p></div>
           <div className="fld"><input type="text" id="name" placeholder=" " autoComplete="name" /><label htmlFor="name">Your name</label><span className="err">Please enter your name</span></div>
           <div className="fld"><input type="email" id="email" placeholder=" " autoComplete="email" /><label htmlFor="email">Email address</label><span className="err">Please enter a valid email</span></div>
           <div className="fld"><input type="tel" id="phone" placeholder=" " autoComplete="tel" /><label htmlFor="phone">Phone number (optional)</label></div>

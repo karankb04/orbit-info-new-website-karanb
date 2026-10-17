@@ -7,6 +7,8 @@ import LeadFormHandler from "@/components/LeadFormHandler";
 import HomeEffects from "@/components/HomeEffects";
 import Counters from "@/components/Counters";
 import BrandMarquee from "@/components/BrandMarquee";
+import EquipmentGrid from "@/components/EquipmentGrid";
+import { pickEquipment } from "@/lib/equipment";
 import { siteConfig, yearsInBusiness } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
@@ -254,6 +256,19 @@ export default function HomePage() {
       <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg></div><h3>Same-day, around you</h3><p>We're local, so when something breaks we're already nearby, and it's often fixed the same day.</p></div>
       <div className="why-card reveal"><div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20 6L9 17l-5-5" /></svg></div><h3>Certified partners</h3><p>Synology authorized &amp; Tally certified. We sell genuine products with proper warranties and stand behind our work.</p></div>
     </div>
+  </div>
+</section>
+
+{/* ===== EQUIPMENT PREVIEW ===== */}
+<section className="kit-sec">
+  <div className="wrap">
+    <div className="sec-head light reveal">
+      <span className="eyebrow on-light">Equipment we supply</span>
+      <h2>The hardware behind the work.</h2>
+      <p>Genuine cameras, racks, laptops and office systems, supplied and installed by the people you call later for service.</p>
+    </div>
+    <EquipmentGrid items={pickEquipment(["cctv-outdoor", "cctv-indoor", "cctv-ptz", "racks", "laptops", "pos"])} />
+    <a href="/portfolio#equipment" className="kit-more">See all equipment <span className="arr">→</span></a>
   </div>
 </section>
 

@@ -66,6 +66,9 @@ export default function Nav() {
               <span>Get Free Quote</span>
             </Link>
           </div>
+          <a href={`tel:${siteConfig.phone.primary.e164}`} className="nav-call" aria-label={`Call ${siteConfig.phone.primary.display}`}>
+            <PhoneIcon />
+          </a>
           <button
             className={`burger${menuOpen ? " open" : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}

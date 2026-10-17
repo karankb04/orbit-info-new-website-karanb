@@ -1,4 +1,5 @@
 import Image from "next/image";
+import EquipmentGrid from "@/components/EquipmentGrid";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getBreadcrumbSchema } from "@/lib/schemas";
@@ -198,63 +199,14 @@ export default function PortfolioPage() {
         work it genuinely depicts. Labelling the section for what it is keeps
         that line intact.
       */}
-      <section className="kit-sec">
+      <section className="kit-sec" id="equipment">
         <div className="wrap">
           <div className="sec-head light reveal">
             <span className="eyebrow on-light">Equipment we supply</span>
             <h2>The hardware behind the work.</h2>
             <p>Cameras, racks, machines and office systems we source, install and service. Everything is genuine, and the people who fit it are the ones you call later.</p>
           </div>
-          <div className="kit-grid">
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.cctvOutdoorBullet.src} alt={IMAGES.cctvOutdoorBullet.alt} width={IMAGES.cctvOutdoorBullet.width} height={IMAGES.cctvOutdoorBullet.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Outdoor CCTV</b><span>Weatherproof Wi-Fi bullet</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.cctvIndoorPanTilt.src} alt={IMAGES.cctvIndoorPanTilt.alt} width={IMAGES.cctvIndoorPanTilt.width} height={IMAGES.cctvIndoorPanTilt.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Indoor CCTV</b><span>Pan &amp; tilt, remote view</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.cctvPtzDome.src} alt={IMAGES.cctvPtzDome.alt} width={IMAGES.cctvPtzDome.width} height={IMAGES.cctvPtzDome.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>PTZ speed dome</b><span>Commercial &amp; warehouse</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.rackRange.src} alt={IMAGES.rackRange.alt} width={IMAGES.rackRange.width} height={IMAGES.rackRange.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Network racks</b><span>Wall-mount to floor-standing</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.rackAccessories.src} alt={IMAGES.rackAccessories.alt} width={IMAGES.rackAccessories.width} height={IMAGES.rackAccessories.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Rack accessories</b><span>Shelves, PDU, fan trays</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.businessLaptop.src} alt={IMAGES.businessLaptop.alt} width={IMAGES.businessLaptop.width} height={IMAGES.businessLaptop.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Business laptops</b><span>Sales, upgrades &amp; repair</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.printer.src} alt={IMAGES.printer.alt} width={IMAGES.printer.width} height={IMAGES.printer.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Printers</b><span>Inkjet, laser &amp; multi-function</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.epabx.src} alt={IMAGES.epabx.alt} width={IMAGES.epabx.width} height={IMAGES.epabx.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>EPABX systems</b><span>Office intercom &amp; handsets</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.peripherals.src} alt={IMAGES.peripherals.alt} width={IMAGES.peripherals.width} height={IMAGES.peripherals.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Peripherals</b><span>Keyboards, mice &amp; more</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.cozaSwitches.src} alt={IMAGES.cozaSwitches.alt} width={IMAGES.cozaSwitches.width} height={IMAGES.cozaSwitches.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Smart touch switches</b><span>COZA glass panels</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.posSystem.src} alt={IMAGES.posSystem.alt} width={IMAGES.posSystem.width} height={IMAGES.posSystem.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>POS systems</b><span>Billing, scanner &amp; printer</span></figcaption>
-            </figure>
-            <figure className="kit-card reveal">
-              <Image src={IMAGES.webcam.src} alt={IMAGES.webcam.alt} width={IMAGES.webcam.width} height={IMAGES.webcam.height} sizes="(max-width: 560px) 45vw, 220px" />
-              <figcaption><b>Webcams</b><span>For video calls &amp; meetings</span></figcaption>
-            </figure>
-          </div>
+          <EquipmentGrid />
         </div>
       </section>
 
