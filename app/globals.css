@@ -15,7 +15,7 @@
    ============================================================ */
 :root{
   --navy-900:#060F24;--navy-800:#0A1A3A;--navy-700:#0E2350;--navy-600:#12305F;
-  --blue:#007BFF;--blue-bright:#2E97FF;--gold:#FF9933;--green:#138808;
+  --blue:#007BFF;--blue-bright:#2E97FF;--blue-strong:#0063CC;--gold:#FF9933;--green:#138808;
   --white:#FFFFFF;--off-white:#F8F9FF;--ink:#0A1A3A;--grey:#5B6480;--light-grey:#AEB6CC;
   --line:rgba(255,255,255,.10);--line-dark:rgba(10,26,58,.10);
   --shadow:0 24px 60px -20px rgba(10,26,58,.28);--shadow-blue:0 24px 60px -18px rgba(0,123,255,.35);
@@ -28,16 +28,16 @@ a{color:inherit;text-decoration:none}
 img,svg{display:block}
 section{position:relative}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.eyebrow{font-family:var(--body);font-weight:700;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.eyebrow{font-family:var(--body);font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--blue);display:inline-block}
-.eyebrow.on-light{color:var(--blue)}
+.eyebrow.on-light{color:var(--blue-strong)}
 .eyebrow.on-dark{color:var(--blue-bright)}
 h1,h2,h3{font-family:var(--display);line-height:1.04;letter-spacing:-.02em;font-weight:800}
 p{line-height:1.65}
 .btn{position:relative;display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:.98rem;padding:15px 26px;border-radius:100px;cursor:pointer;border:0;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;z-index:0}
 .btn span{position:relative;z-index:2}
-.btn-primary{background:var(--blue);color:#fff;box-shadow:var(--shadow-blue)}
-.btn-primary::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(110deg,var(--blue-bright),var(--blue));transform:translateX(-101%);transition:transform .45s cubic-bezier(.6,0,.2,1)}
+.btn-primary{background:var(--blue-strong);color:#fff;box-shadow:var(--shadow-blue)}
+.btn-primary::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(110deg,var(--blue-strong),#004FA3);transform:translateX(-101%);transition:transform .45s cubic-bezier(.6,0,.2,1)}
 .btn-primary:hover{transform:translateY(-3px)}
 .btn-primary:hover::after{transform:translateX(0)}
 .btn-ghost{background:transparent;color:#fff;border:1.5px solid var(--line)}
@@ -105,7 +105,7 @@ p{line-height:1.65}
 .footer ul a{color:var(--light-grey);font-size:.94rem;transition:color .2s,padding-left .2s}
 .footer ul a:hover{color:#fff;padding-left:5px}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px}
-.footer-bottom span{color:var(--grey);font-size:.84rem}
+.footer-bottom span{color:var(--light-grey);font-size:.84rem}
 .footer-bottom .tri{display:flex;gap:5px;align-items:center}
 .footer-bottom .tri i{width:22px;height:4px;border-radius:3px}
 .wa-float{position:fixed;right:22px;bottom:22px;z-index:1500;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.6);transition:transform .3s ease}
@@ -382,7 +382,7 @@ p{line-height:1.65}
 .c-row .val{display:block;color:#fff;font-weight:600;font-size:1.12rem;margin-top:5px;line-height:1.35}
 .c-row .val.sm{font-size:1rem;font-weight:500;color:#dfe6f5}
 .c-row a.val:hover{color:var(--blue-bright)}
-.c-row .sub{color:var(--grey);font-size:.86rem;margin-top:3px}
+.c-row .sub{color:var(--light-grey);font-size:.86rem;margin-top:3px}
 /* reuse glass form on navy */
 .form-card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:24px;padding:40px;backdrop-filter:blur(8px);position:relative}
 .form-card::before{content:"";position:absolute;top:0;left:34px;right:34px;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-bright));border-radius:0 0 4px 4px}
@@ -403,7 +403,7 @@ p{line-height:1.65}
 .fld.invalid input,.fld.invalid select,.fld.invalid textarea{border-color:#ff7a63}
 .fld.invalid .err{display:block}
 .form-card .btn{width:100%;justify-content:center;margin-top:6px}
-.form-note{text-align:center;color:var(--grey);font-size:.82rem;margin-top:16px}
+.form-note{text-align:center;color:var(--light-grey);font-size:.82rem;margin-top:16px}
 .form-success{display:none;text-align:center;padding:46px 0}
 .form-success.show{display:block;animation:fadeUp .5s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}

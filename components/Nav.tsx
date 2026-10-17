@@ -31,6 +31,16 @@ export default function Nav() {
   // Close the mobile menu on navigation, otherwise it stays open over the new page.
   useEffect(() => setMenuOpen(false), [pathname]);
 
+  // Escape closes the open mobile menu, as keyboard users expect.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -60,6 +70,7 @@ export default function Nav() {
             className={`burger${menuOpen ? " open" : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
+            aria-controls="mobileMenu"
             onClick={() => setMenuOpen((v) => !v)}
           >
             <span /><span /><span />
@@ -67,7 +78,7 @@ export default function Nav() {
         </div>
       </nav>
 
-      <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+      <div id="mobileMenu" className={`mobile-menu${menuOpen ? " open" : ""}`}>
         {LINKS.map((l) => (
           <Link key={l.href} href={l.href}>{l.label}</Link>
         ))}

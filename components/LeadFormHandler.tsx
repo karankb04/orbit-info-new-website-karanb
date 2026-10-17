@@ -35,10 +35,18 @@ export default function LeadFormHandler() {
       const email = document.getElementById("email") as HTMLInputElement;
       const svc = document.getElementById("service") as HTMLSelectElement;
 
-      let ok = true;
+      let firstInvalid: HTMLElement | null = null;
       const mark = (el: HTMLElement, invalid: boolean) => {
-        el.closest(".fld")?.classList.toggle("invalid", invalid);
-        if (invalid) ok = false;
+        const fld = el.closest(".fld");
+        fld?.classList.toggle("invalid", invalid);
+        // Tie the visible error text to the field so screen readers announce it.
+        const err = fld?.querySelector<HTMLElement>(".err");
+        if (err) {
+          err.id = `${el.id}-err`;
+          el.setAttribute("aria-describedby", err.id);
+        }
+        el.setAttribute("aria-invalid", String(invalid));
+        if (invalid && !firstInvalid) firstInvalid = el;
       };
 
       // Name, email and service are required. Phone is deliberately optional
@@ -47,7 +55,10 @@ export default function LeadFormHandler() {
       mark(name, !name.value.trim());
       mark(email, !EMAIL_RE.test(email.value.trim()));
       mark(svc, !svc.value);
-      if (!ok) return;
+      if (firstInvalid) {
+        (firstInvalid as HTMLElement).focus();
+        return;
+      }
 
       /**
        * Fire-and-forget: we intentionally do NOT await this.
@@ -82,8 +93,10 @@ export default function LeadFormHandler() {
     const fields = Array.from(
       form.querySelectorAll<HTMLElement>(".fld input, .fld textarea")
     );
-    const clear = (el: HTMLElement) => () =>
+    const clear = (el: HTMLElement) => () => {
       el.closest(".fld")?.classList.remove("invalid");
+      el.removeAttribute("aria-invalid");
+    };
     const fieldHandlers = fields.map((el) => {
       const h = clear(el);
       el.addEventListener("input", h);
