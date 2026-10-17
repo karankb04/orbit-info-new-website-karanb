@@ -101,8 +101,10 @@ p{line-height:1.65}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid var(--line)}
 .footer p{color:var(--light-grey);font-size:.94rem;margin-top:20px;max-width:34ch}
 .footer h4{font-family:var(--display);font-size:1rem;letter-spacing:.04em;color:#fff;margin-bottom:20px}
-.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
-.footer ul a{color:var(--light-grey);font-size:.94rem;transition:color .2s,padding-left .2s}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+/* 8px vertical padding makes each link a ~36px tap target; plain rows get the same padding so spacing stays even. */
+.footer ul a{display:inline-block;padding:8px 0;color:var(--light-grey);font-size:.94rem;transition:color .2s,padding-left .2s}
+.footer ul li:not(:has(> a)){padding:8px 0}
 .footer ul a:hover{color:#fff;padding-left:5px}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;flex-wrap:wrap;gap:12px}
 .footer-bottom span{color:var(--light-grey);font-size:.84rem}
@@ -288,9 +290,6 @@ p{line-height:1.65}
 /* ===== ABOUT ===== */
 .story-photo{width:100%;height:100%;object-fit:cover;border-radius:20px;position:absolute;inset:0;opacity:.55;z-index:0}
 .story-visual{position:relative;overflow:hidden}
-@media (prefers-reduced-motion:reduce){
-  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
-}
 
 .story{background:var(--off-white);padding:110px 0}
 .story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
@@ -360,9 +359,6 @@ p{line-height:1.65}
 @media(max-width:560px){.cert-grid,.mini-grid,.val-grid{grid-template-columns:1fr}}
 
 /* ===== CONTACT ===== */
-@media (prefers-reduced-motion:reduce){
-  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
-}
 
 /* contact split */
 .contact{background:var(--navy-900);padding:80px 0 110px;position:relative;overflow:hidden}
@@ -459,10 +455,10 @@ p{line-height:1.65}
 .hero h1 .word{display:inline-block;opacity:0;transform:translateY(40px)}
 .hero-sub{
   margin-top:28px;max-width:48ch;font-size:clamp(1.05rem,2vw,1.28rem);
-  color:#c4cde0;font-weight:400;opacity:0;
+  color:#c4cde0;font-weight:400;
 }
-.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px;opacity:0}
-.hero-meta{display:flex;flex-wrap:wrap;gap:30px;margin-top:54px;opacity:0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:30px;margin-top:54px}
 .hero-meta .m{display:flex;flex-direction:column;gap:2px}
 .hero-meta .m b{font-family:var(--display);font-size:1.7rem;color:#fff}
 .hero-meta .m span{font-size:.8rem;color:var(--light-grey);letter-spacing:.06em;text-transform:uppercase}
@@ -646,9 +642,6 @@ section.lead .crow span{font-size:.86rem;color:var(--light-grey)}
 .bg-cctv{background-image:url('/images/cctv-bullet-camera-outdoor-installation.jpg');background-size:cover;background-position:center 30%}
 .bg-tally{background-image:url('/images/laptop-software-setup-technician.jpg');background-size:cover;background-position:center}
 .bg-backup{background-image:url('/images/office-network-rack-patch-panel-switch.jpg');background-size:cover;background-position:center}
-@media (prefers-reduced-motion:reduce){
-  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
-}
 
 /* ============================================================
    ADDITIONS FOR THE NEXT.JS BUILD

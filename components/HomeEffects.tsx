@@ -145,12 +145,12 @@ export default function HomeEffects() {
     }
 
     /* ---------- Hero intro stagger ---------- */
+    // Only the badge and headline animate. The intro paragraph, buttons and
+    // stats render visible from the server: the paragraph is the page's
+    // largest text, and hiding it until this script ran delayed LCP to ~1.6s.
     const heroTargets = [
       { sel: "#heroBadge", delay: 0, y: 0 },
       { sel: ".hero h1 .word", delay: 260, y: 40 },
-      { sel: "#heroSub", delay: 620, y: 0 },
-      { sel: "#heroCta", delay: 760, y: 0 },
-      { sel: "#heroMeta", delay: 900, y: 0 },
     ];
 
     /**
