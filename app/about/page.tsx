@@ -3,7 +3,7 @@ import { IMAGES } from "@/lib/images";
 import JsonLd from "@/components/JsonLd";
 import { BrandLogo } from "@/components/BrandRow";
 import { BRANDS } from "@/lib/brands";
-import { siteConfig, yearsInBusiness } from "@/lib/siteConfig";
+import { siteConfig, yearsInBusiness, whatsappHref } from "@/lib/siteConfig";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 import { buildMetadata } from "@/lib/metadata";
 import Counters from "@/components/Counters";
@@ -56,6 +56,6 @@ export default function AboutPage() {
 
 <section className="band"><svg className="rings" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" strokeWidth="1.2"><circle cx="200" cy="200" r="80" stroke="#2E97FF" /><circle cx="200" cy="200" r="130" stroke="#FF9933" opacity=".6" /><circle cx="200" cy="200" r="180" stroke="#138808" opacity=".4" /></g></svg>
 <div className="wrap band-inner"><h2>Let&rsquo;s add your business<br /><span className="grad">to the next {yearsInBusiness} years.</span></h2><p>If something on your desk is broken, slow or not backed up yet, we&rsquo;re around you.</p>
-<div className="band-cta"><a href="/contact#quote" className="btn btn-primary"><span>Get a Free Quote</span> <span className="arr">→</span></a><a href="https://wa.me/919324032476" target="_blank" rel="noopener" className="btn btn-ghost"><span>WhatsApp Us</span></a></div></div></section>    </>
+<div className="band-cta"><a href="/contact#quote" className="btn btn-primary"><span>Get a Free Quote</span> <span className="arr">→</span></a><a href={whatsappHref} target="_blank" rel="noopener" className="btn btn-ghost"><span>WhatsApp Us</span></a></div></div></section>    </>
   );
 }

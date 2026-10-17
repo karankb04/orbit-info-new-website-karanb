@@ -9,7 +9,7 @@ import Counters from "@/components/Counters";
 import BrandMarquee from "@/components/BrandMarquee";
 import EquipmentGrid from "@/components/EquipmentGrid";
 import { pickEquipment } from "@/lib/equipment";
-import { siteConfig, yearsInBusiness } from "@/lib/siteConfig";
+import { siteConfig, yearsInBusiness, telHref, whatsappHref } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
   title: `${siteConfig.name} | Mumbai's IT & Security Partner Since 1998`,
@@ -52,7 +52,7 @@ export default function HomePage() {
     <p className="hero-sub" id="heroSub">Laptop &amp; desktop repair, CCTV, Tally, and Synology backup for businesses across Mumbai &amp; Thane. You call, we handle it, and most jobs are done the same day.</p>
     <div className="hero-cta" id="heroCta">
       <a href="/contact#quote" className="btn btn-primary"><span>Get a Free Quote</span> <span className="arr">→</span></a>
-      <a href="https://wa.me/919324032476" target="_blank" rel="noopener" className="btn btn-ghost"><span>WhatsApp Us</span></a>
+      <a href={whatsappHref} target="_blank" rel="noopener" className="btn btn-ghost"><span>WhatsApp Us</span></a>
     </div>
     <div className="hero-meta" id="heroMeta">
       <div className="m"><b>{yearsInBusiness}<span className="accent">+</span></b><span>Years</span></div>
@@ -284,7 +284,7 @@ export default function HomePage() {
       <h2>Tell us what broke.<br />We'll tell you the fix.</h2>
       <p className="lead-sub">Send one message and a real person from Orbit replies, usually within the hour during shop hours.</p>
       <div className="contact-rows">
-        <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg></span><div><b>022-3570 1477 · 93240 32476</b><span>Mon–Sat, 10:30 – 20:00</span></div></div>
+        <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg></span><div><b>{siteConfig.phone.secondary.display} · {siteConfig.phone.primary.display}</b><span>Mon–Sat, 10:30 – 20:00</span></div></div>
         <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg></span><div><b>B-148 Shanti Industrial Estate</b><span>Mulund West, Mumbai</span></div></div>
       </div>
     </div>
@@ -301,7 +301,7 @@ export default function HomePage() {
       <div className="form-success" id="formSuccess">
         <div className="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg></div>
         <h3>Got it. We're on it.</h3>
-        <p>Thanks, we'll call you back shortly. Need us now? <a href="https://wa.me/919324032476" style={{color:"var(--blue-bright)",fontWeight:"600"}}>WhatsApp us →</a></p>
+        <p>Thanks, we'll call you back shortly. Need us now? <a href={whatsappHref} style={{color:"var(--blue-bright)",fontWeight:"600"}}>WhatsApp us →</a></p>
       </div>
     </div>
   </div>
@@ -314,8 +314,8 @@ export default function HomePage() {
     <h2>Got an IT problem?<br /><span className="grad">We're around you.</span></h2>
     <p>Call Orbit and we'll take it from there. Mumbai businesses have been doing that since 1998.</p>
     <div className="finale-cta">
-      <a href="tel:+919324032476" className="btn btn-primary"><span>Call 93240 32476</span></a>
-      <a href="https://wa.me/919324032476" target="_blank" rel="noopener" className="btn btn-ghost"><span>Chat on WhatsApp</span></a>
+      <a href={telHref} className="btn btn-primary"><span>Call {siteConfig.phone.primary.display}</span></a>
+      <a href={whatsappHref} target="_blank" rel="noopener" className="btn btn-ghost"><span>Chat on WhatsApp</span></a>
     </div>
   </div>
 </section>    </>

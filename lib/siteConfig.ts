@@ -167,6 +167,11 @@ export const siteConfig = {
  */
 export const yearsInBusiness = new Date().getFullYear() - siteConfig.foundingYear;
 
+/** Link targets for the primary number. Pages use these, never a typed-out number. */
+export const telHref = `tel:${siteConfig.phone.primary.e164}`;
+export const telSecondaryHref = `tel:${siteConfig.phone.secondary.e164}`;
+export const whatsappHref = `https://wa.me/${siteConfig.phone.whatsapp}`;
+
 /** Full postal address as one line, for footers and plain-text contexts. */
 export const formattedAddress = [
   siteConfig.address.streetAddress,

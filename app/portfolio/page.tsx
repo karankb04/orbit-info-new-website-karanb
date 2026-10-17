@@ -6,6 +6,7 @@ import { getBreadcrumbSchema } from "@/lib/schemas";
 import { buildMetadata } from "@/lib/metadata";
 import PortfolioFilters from "@/components/PortfolioFilters";
 import { IMAGES } from "@/lib/images";
+import { whatsappHref } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
   title: "Portfolio: Our Work Across Mumbai & Thane",
@@ -225,7 +226,7 @@ export default function PortfolioPage() {
             <a href="/contact#quote" className="btn btn-primary">
               <span>Get a Free Quote</span> <span className="arr">→</span>
             </a>
-            <a href="https://wa.me/919324032476" target="_blank" rel="noopener" className="btn btn-ghost">
+            <a href={whatsappHref} target="_blank" rel="noopener" className="btn btn-ghost">
               <span>WhatsApp Us</span>
             </a>
           </div>
