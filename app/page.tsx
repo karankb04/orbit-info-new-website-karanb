@@ -9,6 +9,7 @@ import Counters from "@/components/Counters";
 import BrandMarquee from "@/components/BrandMarquee";
 import EquipmentGrid from "@/components/EquipmentGrid";
 import { pickEquipment } from "@/lib/equipment";
+import { HOME_SERVICES } from "@/lib/homeServices";
 import { siteConfig, yearsInBusiness, telHref, whatsappHref } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
@@ -71,51 +72,18 @@ export default function HomePage() {
       <p>We fix cracked laptop screens and we wire whole buildings with cameras. Either way, the same team answers the phone and turns up.</p>
     </div>
     <div className="svc-grid">
-
-      <a href="/services#laptop" className="svc-card" data-card={true}>
-        <div className="bg bg-laptop"></div>
-        <svg className="scene" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="#fff" strokeWidth="1.4" opacity=".5"><rect x="120" y="150" width="160" height="100" rx="6" /><path d="M105 250h190l14 20H91z" /><line x1="160" y1="270" x2="240" y2="270" strokeWidth="3" /></g></svg>
-        <div className="veil"></div>
-        <span className="num">01</span>
-        <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M2 20h20l-2-3H4z" /></svg></div>
-        <h3>Laptop &amp; Desktop Repair</h3>
-        <p>Screens, hinges, water damage and SSD upgrades, plus chip-level motherboard repair that many shops won't take on.</p>
-        <span className="go">Get Free Quote <span className="arr">→</span></span>
-      </a>
-
-      <a href="/services#cctv" className="svc-card" data-card={true}>
-        <div className="bg bg-cctv"></div>
-        <svg className="scene" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="#fff" strokeWidth="1.4" opacity=".5"><rect x="150" y="150" width="120" height="60" rx="10" /><circle cx="180" cy="180" r="16" /><path d="M270 165l40-22M270 195l40 22" /><circle cx="320" cy="140" r="6" /></g></svg>
-        <div className="veil"></div>
-        <span className="num">02</span>
-        <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M3 8l14-4 2 6-14 4z" /><circle cx="10" cy="9" r="2.2" /><path d="M6 14v5M6 19h7" /></svg></div>
-        <h3>CCTV Installation</h3>
-        <p>Homes, offices, societies &amp; commercial sites. We install CP Plus, Hikvision &amp; Panasonic cameras with neat cabling.</p>
-        <span className="go">Get Free Quote <span className="arr">→</span></span>
-      </a>
-
-      <a href="/services#tally" className="svc-card" data-card={true}>
-        <div className="bg bg-tally"></div>
-        <svg className="scene" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="#fff" strokeWidth="1.4" opacity=".5"><rect x="140" y="140" width="120" height="120" rx="8" /><line x1="140" y1="180" x2="260" y2="180" /><line x1="200" y1="180" x2="200" y2="260" /></g></svg>
-        <div className="veil"></div>
-        <span className="num">03</span>
-        <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="4" y="3" width="16" height="18" rx="2" /><line x1="8" y1="8" x2="16" y2="8" /><line x1="8" y1="12" x2="16" y2="12" /><line x1="8" y1="16" x2="12" y2="16" /></svg></div>
-        <h3>Tally Software</h3>
-        <p>Certified sales &amp; implementation partner. We handle licensing, customization and support.</p>
-        <span className="go">Get Free Quote <span className="arr">→</span></span>
-      </a>
-
-      <a href="/services#backup" className="svc-card" data-card={true}>
-        <div className="bg bg-backup"></div>
-        <svg className="scene" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="#fff" strokeWidth="1.4" opacity=".5"><rect x="160" y="130" width="80" height="140" rx="8" /><line x1="160" y1="165" x2="240" y2="165" /><line x1="160" y1="200" x2="240" y2="200" /><circle cx="200" cy="240" r="6" /></g></svg>
-        <div className="veil"></div>
-        <span className="num">04</span>
-        <div className="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6" /><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" /></svg></div>
-        <h3>NAS / Synology Backup</h3>
-        <p>Authorized Synology partner. Business-grade backup so a dead drive never means a lost year.</p>
-        <span className="go">Get Free Quote <span className="arr">→</span></span>
-      </a>
-
+      {HOME_SERVICES.map((svc) => (
+        <a key={svc.id} href={`/services#${svc.id}`} className="svc-card" data-card={true}>
+          <div className={`bg ${svc.bg}`}></div>
+          {svc.scene}
+          <div className="veil"></div>
+          <span className="num">{svc.num}</span>
+          <div className="ico">{svc.icon}</div>
+          <h3>{svc.cardTitle}</h3>
+          <p>{svc.cardBlurb}</p>
+          <span className="go">Get Free Quote <span className="arr">→</span></span>
+        </a>
+      ))}
     </div>
   </div>
 </section>
@@ -128,44 +96,28 @@ export default function HomePage() {
       <span className="eyebrow on-dark">What we do</span>
       <h2 style={{marginTop:"16px"}}>Four services,<br />one local team.</h2>
     </div>
-    <div className="svc-tabs reveal" role="tablist" style={{marginTop:"38px"}}><button className="svc-tab  active" data-tab="0" aria-selected="true">Laptop Repair</button><button className="svc-tab" data-tab="1" aria-selected="false">CCTV Setup</button><button className="svc-tab" data-tab="2" aria-selected="false">Tally Software</button><button className="svc-tab" data-tab="3" aria-selected="false">Synology Backup</button></div>
-    <div className="svc-panels reveal"><div className="svc-panel  active" data-panel="0">
-      <div>
-        <span className="step">SERVICE 01</span>
-        <h3>Laptop Repair</h3>
-        <p>Drop it off or we collect it. Chip-level diagnosis, honest quote, same-day on most jobs.</p>
-        <ul><li>Screen &amp; hinge</li><li>Water damage</li><li>SSD upgrades</li><li>Motherboard</li></ul>
-        <div className="panel-cta"><a href="/services#laptop" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
-      </div>
-      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.laptopChipRepair.src} alt={IMAGES.laptopChipRepair.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
-    </div><div className="svc-panel" data-panel="1">
-      <div>
-        <span className="step">SERVICE 02</span>
-        <h3>CCTV Setup</h3>
-        <p>Site survey, neat cabling, and a live view on your phone before we leave.</p>
-        <ul><li>CP Plus</li><li>Hikvision</li><li>Panasonic</li><li>Remote view</li></ul>
-        <div className="panel-cta"><a href="/services#cctv" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
-      </div>
-      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.cctvBulletInstall.src} alt={IMAGES.cctvBulletInstall.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
-    </div><div className="svc-panel" data-panel="2">
-      <div>
-        <span className="step">SERVICE 03</span>
-        <h3>Tally Software</h3>
-        <p>Licensing, GST-ready setup and customization, and support that answers the phone.</p>
-        <ul><li>Sales partner</li><li>Implementation</li><li>Customization</li><li>AMC support</li></ul>
-        <div className="panel-cta"><a href="/services#tally" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
-      </div>
-      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.softwareSetup.src} alt={IMAGES.softwareSetup.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
-    </div><div className="svc-panel" data-panel="3">
-      <div>
-        <span className="step">SERVICE 04</span>
-        <h3>Synology Backup</h3>
-        <p>Automatic, redundant business backup configured by an authorized partner.</p>
-        <ul><li>NAS setup</li><li>RAID config</li><li>Auto backup</li><li>Recovery plan</li></ul>
-        <div className="panel-cta"><a href="/services#backup" className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
-      </div>
-      <div className="svc-panel-visual"><Image className="svc-panel-img" src={IMAGES.networkRack.src} alt={IMAGES.networkRack.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
-    </div></div>
+    <div className="svc-tabs reveal" role="tablist" style={{marginTop:"38px"}}>
+      {HOME_SERVICES.map((svc, i) => (
+        <button key={svc.id} className={`svc-tab${i === 0 ? "  active" : ""}`} data-tab={i} aria-selected={i === 0}>{svc.tabTitle}</button>
+      ))}
+    </div>
+    <div className="svc-panels reveal">
+      {HOME_SERVICES.map((svc, i) => {
+        const img = IMAGES[svc.panelImage];
+        return (
+          <div key={svc.id} className={`svc-panel${i === 0 ? "  active" : ""}`} data-panel={i}>
+            <div>
+              <span className="step">SERVICE {svc.num}</span>
+              <h3>{svc.tabTitle}</h3>
+              <p>{svc.panelText}</p>
+              <ul>{svc.chips.map((c) => <li key={c}>{c}</li>)}</ul>
+              <div className="panel-cta"><a href={`/services#${svc.id}`} className="btn btn-primary"><span>Learn more</span> <span className="arr">→</span></a><a href="/contact#quote" className="btn btn-ghost"><span>Get a quote</span></a></div>
+            </div>
+            <div className="svc-panel-visual"><Image className="svc-panel-img" src={img.src} alt={img.alt} fill sizes="(max-width: 980px) 320px, 493px" /></div>
+          </div>
+        );
+      })}
+    </div>
   </div>
 </section>
 
