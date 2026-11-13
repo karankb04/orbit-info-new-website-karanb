@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/siteConfig";
 import { getAllPosts } from "@/lib/posts";
 
+// Static export: generated once at build time.
+export const dynamic = "force-static";
+
 /**
  * Sitemap. URLs are built with the same `absoluteUrl` helper that produces the
  * canonical tags, so the two can never drift apart.

@@ -28,3 +28,9 @@ Thumbs.db
 LEARNINGS.md
 SEO-LEARNINGS.md
 Translation-audit.md
+
+# generated at build time by scripts/generate-images.mjs
+public/_img/
+
+# wrangler local state
+.wrangler/

@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl, siteConfig } from "@/lib/siteConfig";
 
+// Static export: generated once at build time.
+export const dynamic = "force-static";
+
 /**
  * robots.txt.
  *

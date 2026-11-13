@@ -6,6 +6,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { getAllPosts, getPost } from "@/lib/posts";
 
 /** Every post is known at build time, so all of them are statically generated. */
+// Static export: unknown slugs are a 404, never rendered on demand.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
