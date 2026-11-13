@@ -1,11 +1,11 @@
 /* ============================================================
-   PREVIEW THEME (preview/redesign branch only)
+   THEME LAYER (explored on preview/redesign, merged 2026-11-13)
    From the UI UX Pro Max design system for this business
    (design-system/orbit-it-solutions/MASTER.md): Trust & Authority
    pattern, flat style, trust blue + orange used only for calls to
    action, Poppins / Open Sans, no gradients or heavy shadows,
    150-200ms transitions. Loaded after globals.css so the existing
-   stylesheet stays untouched and this file can be dropped cleanly.
+   stylesheet stays untouched; removing this import restores the old look.
    ============================================================ */
 
 :root{
