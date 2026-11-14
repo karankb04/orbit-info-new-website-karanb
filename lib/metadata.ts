@@ -11,8 +11,8 @@
 import type { Metadata } from "next";
 import { siteConfig, absoluteUrl } from "./siteConfig";
 
-/** Default share image. Replace with a branded 1200x630 OG card once designed. */
-const DEFAULT_OG_IMAGE = "/images/og-default.png";
+/** Default share image. 1200x630 crop of the team photo. Replace with a designed card if one is made. */
+const DEFAULT_OG_IMAGE = "/images/og-default.jpg";
 
 export function buildMetadata({
   title,

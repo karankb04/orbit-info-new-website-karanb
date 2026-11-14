@@ -133,7 +133,9 @@ export default function HomeEffects() {
         ctx.restore();
 
         t += reduce ? 0 : 0.006;
-        raf = requestAnimationFrame(draw);
+        if (!reduce) {
+          raf = requestAnimationFrame(draw);
+        }
       };
       draw();
       if (core) core.classList.add("in");

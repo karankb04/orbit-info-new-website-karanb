@@ -38,7 +38,7 @@ export default function AboutPage() {
 </div></div></section>
 
 <section className="mini"><div className="wrap"><div className="mini-grid">
-<div className="reveal"><div className="n" data-count="26" data-suffix="+"></div><div className="l">Years in business</div></div>
+<div className="reveal"><div className="n" data-count={yearsInBusiness} data-suffix="+"></div><div className="l">Years in business</div></div>
 <div className="reveal"><div className="n" data-count="5000" data-suffix="+"></div><div className="l">Clients served</div></div>
 <div className="reveal"><div className="n" data-count="15" data-suffix="+"></div><div className="l">Brands supported</div></div>
 <div className="reveal"><div className="n" data-text="Same-Day"></div><div className="l">Service response</div></div>

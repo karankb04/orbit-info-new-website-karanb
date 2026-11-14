@@ -31,6 +31,9 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const prevMenuOpen = useRef(menuOpen);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -67,6 +70,16 @@ export default function Nav() {
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
   }, [servicesOpen]);
+
+  // Move focus into the mobile menu when it opens, back to the button when it closes.
+  useEffect(() => {
+    if (menuOpen && firstLinkRef.current) {
+      firstLinkRef.current.focus();
+    } else if (!menuOpen && prevMenuOpen.current && menuBtnRef.current) {
+      menuBtnRef.current.focus();
+    }
+    prevMenuOpen.current = menuOpen;
+  }, [menuOpen]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -127,6 +140,7 @@ export default function Nav() {
             <PhoneIcon />
           </a>
           <button
+            ref={menuBtnRef}
             className={`burger${menuOpen ? " open" : ""}`}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
@@ -138,10 +152,22 @@ export default function Nav() {
         </div>
       </nav>
 
-      <div id="mobileMenu" className={`mobile-menu${menuOpen ? " open" : ""}`}>
-        {LINKS.map((l) => (
+      <div
+        id="mobileMenu"
+        className={`mobile-menu${menuOpen ? " open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+      >
+        {LINKS.map((l, i) => (
           <div key={l.href}>
-            <Link href={l.href} className={isActive(l.href) ? "active" : undefined}>{l.label}</Link>
+            <Link
+              href={l.href}
+              ref={i === 0 ? firstLinkRef : undefined}
+              className={isActive(l.href) ? "active" : undefined}
+            >{l.label}</Link>
             {l.href === "/services" && (
               <ul className="mm-sub">
                 {SERVICE_LINKS.map((s) => (
