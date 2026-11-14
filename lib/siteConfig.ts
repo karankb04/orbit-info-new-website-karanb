@@ -95,6 +95,12 @@ export const siteConfig = {
    */
   email: "satish@orbititsolutions.in",
 
+  /** Google Business Profile Maps listing. Used in schema `hasMap`, footer and contact links. */
+  googleMapsUrl: "https://www.google.com/maps?cid=4626141864255586721",
+
+  /** Direct link to leave a review on the Google Business Profile. */
+  googleReviewUrl: "https://g.page/r/CaGBhOODWzNAEBM/review",
+
   /**
    * Opening hours in schema.org OpeningHoursSpecification order.
    * GBP shows "Closes 8 pm"; the legacy site said 19:00. 20:00 follows GBP,
@@ -132,7 +138,7 @@ export const siteConfig = {
    */
   sameAs: [
     // Canonical Google Business Profile link, built from the listing's CID.
-    "https://maps.google.com/?cid=4626141864255586721",
+    "https://www.google.com/maps?cid=4626141864255586721",
     "https://www.facebook.com/orbitinfosystem/",
     "https://www.justdial.com/Mumbai/Orbit-Info-Systems-Tambe-Nagar-Mulund-West/022P1100215_BZDET",
     "https://www.indiamart.com/orbitinfo-systems/aboutus.html",

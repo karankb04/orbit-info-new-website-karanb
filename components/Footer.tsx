@@ -20,6 +20,9 @@ export default function Footer() {
               Mumbai&rsquo;s trusted IT &amp; electronic security partner since{" "}
               {siteConfig.foundingYear}.
             </p>
+            <p>
+              <small>Formerly {siteConfig.alternateName}</small>
+            </p>
           </div>
 
           <div>
@@ -56,6 +59,11 @@ export default function Footer() {
                 <address style={{ fontStyle: "normal" }}>{formattedAddress}</address>
               </li>
               <li>Mon&ndash;Sat · {hours.opens}&ndash;{hours.closes}</li>
+              <li>
+                <a href={siteConfig.googleReviewUrl} target="_blank" rel="noopener">
+                  Review us on Google
+                </a>
+              </li>
             </ul>
           </div>
         </div>

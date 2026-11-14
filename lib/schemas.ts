@@ -87,6 +87,7 @@ export function getLocalBusinessSchema(): Json {
 
     areaServed: siteConfig.areaServed.map((name) => ({ "@type": "City", name })),
     sameAs: siteConfig.sameAs,
+    hasMap: siteConfig.googleMapsUrl,
 
     /**
      * `geo` is included ONLY when real coordinates exist. While siteConfig.geo
