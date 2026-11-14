@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prebuild": "node scripts/generate-images.mjs",
-    "preview:cf": "wrangler dev",
-    "deploy:cf": "npm run build && wrangler deploy",
+    "preview:cf": "wrangler pages dev",
     "postbuild": "node scripts/flatten-rsc.mjs"
   },
   "dependencies": {

@@ -46,7 +46,9 @@ export const siteConfig = {
    * Canonical origin. No trailing slash — every URL helper appends its own,
    * so a trailing slash here would produce "//" in sitemap and canonical tags.
    */
-  url: "https://orbititsolutions.in",
+  // www, not the bare domain: DNS stays at GoDaddy, which can point www at any
+  // host with one CNAME; the bare domain 301-forwards here.
+  url: "https://www.orbititsolutions.in",
 
   /**
    * The previous domain. Stays live for email continuity and old business cards,
