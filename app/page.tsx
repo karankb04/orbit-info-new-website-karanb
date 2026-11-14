@@ -45,8 +45,8 @@ export default function HomePage() {
   <div className="hero-inner wrap">
     <span className="hero-badge" id="heroBadge"><span className="dot"></span> Mulund West, Mumbai · Since 1998</span>
     <h1 id="heroH1">
-      <span className="word">When</span> <span className="word">tech</span> <span className="word">breaks,</span><br />
-      <span className="word grad">we're</span> <span className="word grad">around</span> <span className="word grad">you.</span>
+      <span className="word">Laptop</span> <span className="word">repair,</span> <span className="word">CCTV</span> <span className="word">&amp;</span> <span className="word">IT</span> <span className="word">support</span><br />
+      <span className="word grad">in</span> <span className="word grad">Mulund</span> <span className="word grad">&amp;</span> <span className="word grad">Thane.</span>
     </h1>
     <p className="hero-sub" id="heroSub">Laptop &amp; desktop repair, CCTV, Tally, and Synology backup for businesses across Mumbai &amp; Thane. You call, we handle it, and most jobs are done the same day.</p>
     <div className="hero-cta" id="heroCta">
@@ -92,7 +92,7 @@ export default function HomePage() {
   <div className="wrap">
     <div className="sec-head dark reveal" style={{marginBottom:"0"}}>
       <span className="eyebrow on-dark">What we do</span>
-      <h2 style={{marginTop:"16px"}}>Four services,<br />one local team.</h2>
+      <h2 style={{marginTop:"16px"}}>Pick a service.<br />See the work.</h2>
     </div>
     <div className="svc-tabs reveal" role="tablist" style={{marginTop:"38px"}}>
       {HOME_SERVICES.map((svc, i) => (

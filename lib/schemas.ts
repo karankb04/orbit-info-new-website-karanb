@@ -47,7 +47,12 @@ export function getLocalBusinessSchema(): Json {
 
     description: siteConfig.description,
     url: siteConfig.url,
-    logo: absoluteUrl("/logo-icon.png"),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/logo-icon.png"),
+      width: 618,
+      height: 536,
+    },
     image: absoluteUrl("/logo-icon.png"),
     foundingDate: String(siteConfig.foundingYear),
     founder: { "@type": "Person", name: siteConfig.founder },

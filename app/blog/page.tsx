@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
   description:
     "Practical advice on laptop repair, CCTV installation, Tally and data backup from Orbit IT Solutions, Mumbai's IT partner since 1998.",
   path: "/blog",
+  noindex: true,
 });
 
 const formatDate = (iso: string) =>

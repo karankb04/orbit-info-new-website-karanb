@@ -136,7 +136,7 @@ export default function PortfolioPage() {
         <div className="wrap phero-inner">
           <Breadcrumbs trail={[{ name: "Portfolio", path: "/portfolio" }]} />
           <h1>
-            The work, <span className="grad">on the wall.</span>
+            CCTV, network &amp; repair work <span className="grad">across Mulund &amp; Thane.</span>
           </h1>
           <p>
             Cameras up, boards repaired, racks tidied, offices wired. A look at jobs

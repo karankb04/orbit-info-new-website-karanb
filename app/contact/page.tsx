@@ -21,7 +21,7 @@ export default function ContactPage() {
   <div className="wrap phero-inner reveal">
     <div className="crumbs"><a href="/">Home</a><span className="sep">/</span><span>Contact</span></div>
     <span className="eyebrow on-dark">Get in touch</span>
-    <h1 style={{marginTop:"18px"}}>Let&rsquo;s fix it. <span className="grad">Fast.</span></h1>
+    <h1 style={{marginTop:"18px"}}>Contact us in <span className="grad">Mulund West.</span></h1>
     <p>Broken laptop, new CCTV setup, a Tally licence or a backup that finally needs sorting: tell us what&rsquo;s up. We pick up the phone, and we&rsquo;re around you.</p>
   </div>
 </section>
