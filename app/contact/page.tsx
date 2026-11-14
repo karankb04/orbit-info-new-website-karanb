@@ -102,7 +102,7 @@ export default function ContactPage() {
     src={`https://www.google.com/maps?q=${siteConfig.geo!.latitude},${siteConfig.geo!.longitude}&z=16&output=embed`}></iframe>
 </div>
 <div className="wrap" style={{ display: "flex", gap: "16px", flexWrap: "wrap", paddingTop: "18px", paddingBottom: "18px" }}>
-  <a className="btn btn-ghost on-light" href={siteConfig.googleMapsUrl} target="_blank" rel="noopener">Open in Google Maps</a>
+  <a className="btn btn-ghost" href={siteConfig.googleMapsUrl} target="_blank" rel="noopener">Open in Google Maps</a>
   <a className="btn btn-primary" href={siteConfig.googleReviewUrl} target="_blank" rel="noopener">Leave us a Google review</a>
 </div>    </>
   );
