@@ -80,6 +80,6 @@ export const HOME_SERVICES: HomeService[] = [
     tabTitle: "Synology Backup",
     panelText: "Automatic, redundant business backup configured by an authorized partner.",
     chips: ["NAS setup", "RAID config", "Auto backup", "Recovery plan"],
-    panelImage: "networkRack",
+    panelImage: "serverRacks",
   },
 ];

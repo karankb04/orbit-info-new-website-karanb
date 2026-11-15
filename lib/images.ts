@@ -57,6 +57,12 @@ export const IMAGES = {
     width: 1200,
     height: 1600,
   },
+  serverRacks: {
+    src: "/images/server-racks-fibre-patch-cables.jpg",
+    alt: "Server racks with storage and network equipment connected by orange and blue fibre patch cables",
+    width: 1080,
+    height: 720,
+  },
   wallRack: {
     src: "/images/wall-mounted-network-rack-installation.jpg",
     alt: "Wall-mounted network and DVR enclosure installed above cabled power and data points",

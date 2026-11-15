@@ -155,7 +155,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     section: "white",
     flip: true,
     tag: "Data Backup",
-    image: "networkRack",
+    image: "serverRacks",
     grad: "g-backup",
     art: (
       <svg {...artProps}><g {...strokeProps}><ellipse cx="100" cy="52" rx="46" ry="16" stroke="#2E97FF" /><path d="M54 52v96c0 9 20 16 46 16s46-7 46-16V52" /><path d="M54 100c0 9 20 16 46 16s46-7 46-16" /><circle cx="100" cy="140" r="6" stroke="#FF9933" /></g></svg>
