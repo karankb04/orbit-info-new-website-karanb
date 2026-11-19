@@ -30,6 +30,7 @@
 .band,.finale{background:var(--navy-900)}
 .kit-card,.blog-card,.cert,.why-card,.val,.sec2-card,.poster-grid a,.form-card,.tile,.svc-visual,.stat{box-shadow:none!important}
 .kit-card,.blog-card,.cert,.why-card,.val,.poster-grid a{border:1px solid var(--line-dark)}
+.c-row .val{border:0}
 .kit-card:hover,.blog-card:hover,.cert:hover,.why-card:hover,.poster-grid a:hover{transform:none;border-color:var(--blue)}
 .svc-card:hover,.tile:hover{transform:none}
 
