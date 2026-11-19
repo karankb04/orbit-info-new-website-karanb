@@ -19,7 +19,7 @@ const LINKS = [
 /** The Services menu: every service one click from any page. */
 const SERVICE_LINKS = [
   { href: "/services#laptop", label: "Laptop & Desktop Repair", note: "Chip-level repair, most jobs same day" },
-  { href: "/services#cctv", label: "CCTV Installation", note: "CP Plus & Hikvision distributor" },
+  { href: "/services#cctv", label: "CCTV Installation", note: "CP Plus & Hikvision installation" },
   { href: "/services#tally", label: "Tally Software", note: "Licensing, GST setup, support" },
   { href: "/services#backup", label: "Synology Backup", note: "NAS, RAID and recovery" },
   { href: "/services#ups", label: "UPS & Power Backup", note: "600 VA to 20 kVA, in stock" },

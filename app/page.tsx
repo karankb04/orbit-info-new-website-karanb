@@ -8,7 +8,7 @@ import BrandMarquee from "@/components/BrandMarquee";
 import EquipmentGrid from "@/components/EquipmentGrid";
 import { pickEquipment } from "@/lib/equipment";
 import { HOME_SERVICES } from "@/lib/homeServices";
-import { siteConfig, yearsInBusiness, telHref, whatsappHref } from "@/lib/siteConfig";
+import { siteConfig, yearsInBusiness, telHref, whatsappHref, formattedAddress } from "@/lib/siteConfig";
 
 export const metadata = buildMetadata({
   title: `${siteConfig.name} | Mumbai's IT & Security Partner Since 1998`,
@@ -66,7 +66,7 @@ export default function HomePage() {
   <div className="wrap">
     <div className="sec-head light reveal">
       <span className="eyebrow on-light">What we do</span>
-      <h2>Four services,<br />one local team.</h2>
+      <h2>The work we do.</h2>
       <p>We fix cracked laptop screens and we wire whole buildings with cameras. Either way, the same team answers the phone and turns up.</p>
     </div>
     <div className="svc-grid">
@@ -92,7 +92,7 @@ export default function HomePage() {
   <div className="wrap">
     <div className="sec-head dark reveal" style={{marginBottom:"0"}}>
       <span className="eyebrow on-dark">What we do</span>
-      <h2 style={{marginTop:"16px"}}>Pick a service.<br />See the work.</h2>
+      <h2 style={{marginTop:"16px"}}>Choose a service to see the work.</h2>
     </div>
     <div className="svc-tabs reveal" role="tablist" style={{marginTop:"38px"}}>
       {HOME_SERVICES.map((svc, i) => (
@@ -231,11 +231,11 @@ export default function HomePage() {
   <div className="wrap lead-grid">
     <div className="reveal">
       <span className="eyebrow on-dark">Free quote</span>
-      <h2>Tell us what broke.<br />We'll tell you the fix.</h2>
-      <p className="lead-sub">Send one message and a real person from Orbit replies, usually within the hour during shop hours.</p>
+      <h2>Tell us what you need and we&rsquo;ll quote the fix.</h2>
+      <p className="lead-sub">Send one message and a real person from Orbit replies within working hours.</p>
       <div className="contact-rows">
-        <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg></span><div><b>{siteConfig.phone.secondary.display} · {siteConfig.phone.primary.display}</b><span>Mon–Sat, 10:30 – 20:00</span></div></div>
-        <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg></span><div><b>B-148 Shanti Industrial Estate</b><span>Mulund West, Mumbai</span></div></div>
+        <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg></span><div><b>{siteConfig.phone.landlines.map((l) => l.display).join(" · ")} · {siteConfig.phone.primary.display} · {siteConfig.phone.tertiary.display}</b><span>Mon–Sat, 10:30 – 20:00</span></div></div>
+        <div className="crow"><span className="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg></span><div><b>{formattedAddress}</b><span>Walk in during working hours</span></div></div>
       </div>
     </div>
 
@@ -261,7 +261,7 @@ export default function HomePage() {
 <section className="finale">
   <svg className="rings" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" strokeWidth="1.2"><circle cx="200" cy="200" r="70" stroke="#2E97FF" /><circle cx="200" cy="200" r="120" stroke="#FF9933" opacity=".6" /><circle cx="200" cy="200" r="170" stroke="#138808" opacity=".4" /><circle cx="200" cy="200" r="195" stroke="#fff" opacity=".15" /></g></svg>
   <div className="wrap finale-inner">
-    <h2>Got an IT problem?<br /><span className="grad">We're around you.</span></h2>
+    <h2>For any IT problem,<br /><span className="grad">we're around you.</span></h2>
     <p>Call Orbit and we'll take it from there. Mumbai businesses have been doing that since 1998.</p>
     <div className="finale-cta">
       <a href={telHref} className="btn btn-primary"><span>Call {siteConfig.phone.primary.display}</span></a>

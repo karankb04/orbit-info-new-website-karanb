@@ -59,20 +59,16 @@ export const siteConfig = {
 
   address: {
     /**
-     * GBP renders this as "B-148"; TradeIndia has "Plot No.148". GBP wins —
-     * it is the listing Google itself reads. Keep both halves in sync manually
-     * with the GBP dashboard whenever either changes.
+     * Exact address as confirmed by the owner. streetAddress ends with the
+     * suburb (Mulund West); city and postal code are rendered separately so
+     * formattedAddress can produce "Mumbai - 400 080" exactly.
      */
-    streetAddress: "B-148, Shanti Industrial Estate, Sarojini Naidu Road, Tambe Nagar",
+    streetAddress: "B-148, Shanti Industrial Estate, S.N. Road, Near Tambe Nagar, Mulund (W)",
     locality: "Mulund West",
+    city: "Mumbai",
     region: "Maharashtra",
-    /**
-     * 400080, NOT the 400604 currently shown on the GBP listing.
-     * 400604 is a Thane pincode; Mulund West is 400080, which is what the old
-     * website and TradeIndia both carry. The GBP address needs correcting —
-     * tracked as an open action in the roadmap.
-     */
     postalCode: "400080",
+    postalCodeDisplay: "400 080",
     country: "IN",
   },
 
@@ -82,7 +78,15 @@ export const siteConfig = {
      * E.164 for `tel:` links and schema; `display` for human-readable text.
      */
     primary: { e164: "+919324032476", display: "93240 32476", intlDisplay: "+91 93240 32476" },
-    secondary: { e164: "+912235701477", display: "022-3570 1477" },
+    /**
+     * All three landlines must appear wherever phone numbers are listed.
+     * These replace the previous single secondary landline.
+     */
+    landlines: [
+      { e164: "+912235701477", display: "022-3570 1477" },
+      { e164: "+912235701488", display: "022-3570 1488" },
+      { e164: "+912235701499", display: "022-3570 1499" },
+    ],
     whatsapp: "919324032476",
     /** Second mobile advertised on print material; listed for completeness. */
     tertiary: { e164: "+919322432475", display: "93224 32475" },
@@ -177,14 +181,12 @@ export const yearsInBusiness = new Date().getFullYear() - siteConfig.foundingYea
 
 /** Phone and WhatsApp link targets. Pages use these, never a typed-out number. */
 export const telHref = `tel:${siteConfig.phone.primary.e164}`;
-export const telSecondaryHref = `tel:${siteConfig.phone.secondary.e164}`;
 export const whatsappHref = `https://wa.me/${siteConfig.phone.whatsapp}`;
 
 /** Full postal address as one line, for footers and plain-text contexts. */
 export const formattedAddress = [
   siteConfig.address.streetAddress,
-  siteConfig.address.locality,
-  `${siteConfig.address.region} ${siteConfig.address.postalCode}`,
+  `${siteConfig.address.city} - ${siteConfig.address.postalCodeDisplay}`,
 ].join(", ");
 
 /**

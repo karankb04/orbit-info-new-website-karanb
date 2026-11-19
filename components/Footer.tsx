@@ -50,7 +50,10 @@ export default function Footer() {
             <h4>Reach us</h4>
             <ul>
               <li><a href={`tel:${phone.primary.e164}`}>{phone.primary.display}</a></li>
-              <li><a href={`tel:${phone.secondary.e164}`}>{phone.secondary.display}</a></li>
+              <li><a href={`tel:${phone.tertiary.e164}`}>{phone.tertiary.display}</a></li>
+              {phone.landlines.map((l) => (
+                <li key={l.e164}><a href={`tel:${l.e164}`}>{l.display}</a></li>
+              ))}
               {/*
                 Marked up as a real postal address. The old build had this as a
                 plain <a> to the contact page, which told crawlers nothing.

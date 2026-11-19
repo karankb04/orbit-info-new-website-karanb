@@ -27,7 +27,7 @@ export default function BlogIndex() {
         <div className="wrap phero-inner">
           <Breadcrumbs trail={[{ name: "Blog", path: "/blog" }]} />
           <h1>
-            Advice, <span className="grad">not sales talk.</span>
+            Practical advice <span className="grad">for Mumbai businesses.</span>
           </h1>
           <p>
             What we&rsquo;ve learned fixing laptops, wiring cameras and rescuing data across

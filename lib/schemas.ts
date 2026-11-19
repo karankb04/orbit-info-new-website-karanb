@@ -60,7 +60,7 @@ export function getLocalBusinessSchema(): Json {
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.streetAddress,
-      addressLocality: siteConfig.address.locality,
+      addressLocality: siteConfig.address.city,
       addressRegion: siteConfig.address.region,
       postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country,

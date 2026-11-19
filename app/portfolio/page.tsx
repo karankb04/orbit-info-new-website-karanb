@@ -139,8 +139,8 @@ export default function PortfolioPage() {
             CCTV, network &amp; repair work <span className="grad">across Mulund &amp; Thane.</span>
           </h1>
           <p>
-            Cameras up, boards repaired, racks tidied, offices wired. A look at jobs
-            we&rsquo;ve handled across Mumbai &amp; Thane.
+            A look at CCTV, network and repair jobs we&rsquo;ve handled across Mumbai
+            &amp; Thane.
           </p>
         </div>
       </header>
@@ -204,7 +204,7 @@ export default function PortfolioPage() {
         <div className="wrap">
           <div className="sec-head light reveal">
             <span className="eyebrow on-light">Equipment we supply</span>
-            <h2>The hardware behind the work.</h2>
+            <h2>The hardware we supply and install.</h2>
             <p>Cameras, racks, machines and office systems we source, install and service. Everything is genuine, and the people who fit it are the ones you call later.</p>
           </div>
           <EquipmentGrid />
@@ -220,7 +220,7 @@ export default function PortfolioPage() {
           </g>
         </svg>
         <div className="wrap band-inner">
-          <h2>Your project could be next.</h2>
+          <h2>Start your next project with us.</h2>
           <p>Tell us what you need installed, fixed or backed up. We&rsquo;ll do it to the same standard.</p>
           <div className="band-cta">
             <a href="/contact#quote" className="btn btn-primary">

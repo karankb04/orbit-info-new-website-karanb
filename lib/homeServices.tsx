@@ -76,7 +76,7 @@ export const HOME_SERVICES: HomeService[] = [
     scene: <svg {...sceneProps}><g {...sceneStroke}><rect x="160" y="130" width="80" height="140" rx="8" /><line x1="160" y1="165" x2="240" y2="165" /><line x1="160" y1="200" x2="240" y2="200" /><circle cx="200" cy="240" r="6" /></g></svg>,
     icon: <svg {...iconProps}><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6" /><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" /></svg>,
     cardTitle: "NAS / Synology Backup",
-    cardBlurb: "Authorized Synology partner. Business-grade backup so a dead drive never means a lost year.",
+    cardBlurb: "Authorized Synology partner. Business-grade backup that keeps your data safe when a drive fails.",
     tabTitle: "Synology Backup",
     panelText: "Automatic, redundant business backup configured by an authorized partner.",
     chips: ["NAS setup", "RAID config", "Auto backup", "Recovery plan"],

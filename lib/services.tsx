@@ -99,7 +99,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     art: (
       <svg {...artProps}><g {...strokeProps}><rect x="45" y="50" width="110" height="72" rx="6" /><path d="M32 122h136l12 20H20z" /><circle cx="100" cy="86" r="20" stroke="#2E97FF" /><path d="M100 76v10l7 7" stroke="#FF9933" /></g></svg>
     ),
-    heading: <>Laptop &amp; desktop repair, down to the chip.</>,
+    heading: <>Laptop &amp; desktop repair, down to the chip level.</>,
     lead: <>A cracked screen is easy. A dead motherboard is where many shops give up, and that&apos;s the work we take on. We diagnose at component level, quote honestly, and return most jobs the same day.</>,
     bullets: ["Screen & display replacement", "Hinge & body repair", "Liquid / water damage recovery", "Keyboard & trackpad", "SSD & RAM upgrades", "Chip-level motherboard repair"],
     after: <BrandRow brands={[BRANDS.hp, BRANDS.dell, BRANDS.lenovo]} />,
@@ -115,7 +115,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     art: (
       <svg {...artProps}><g {...strokeProps}><rect x="40" y="74" width="80" height="44" rx="10" /><circle cx="62" cy="96" r="11" stroke="#2E97FF" /><path d="M120 84l44-20M120 108l44 20" /><circle cx="170" cy="60" r="7" stroke="#FF9933" /><path d="M70 118v22M55 140h45" /></g></svg>
     ),
-    heading: <>CCTV you can watch from your phone.</>,
+    heading: <>CCTV with remote viewing on your phone.</>,
     lead: <>Homes, offices, societies and commercial sites. We survey the site, install with neat cabling, and set up remote viewing on your phone before we leave.</>,
     bullets: ["Home & apartment cameras", "Office & retail surveillance", "Society & building-wide systems", "Commercial & warehouse", "Mobile / remote live view", "Recording & storage setup"],
     after: (
@@ -126,10 +126,10 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     ),
     extra: (
       <div className="poster-block reveal">
-        <span className="eyebrow on-light">Regional distributor</span>
-        <h3>CP Plus, Hikvision and Seagate, from stock.</h3>
-        <p>We are an authorised regional distributor for CP Plus and Hikvision, and a regional distributor for Seagate SkyHawk surveillance drives. We keep the full camera range in stock (analog, IP and PTZ cameras, DVR and NVR recorders, PoE switches, monitors and video door phones) and offer dealer pricing to installers and resellers. CP Plus Wi-Fi cameras in stock include the CP-E28Q (2MP), CP-E31Q (3MP), EZ-P34Q (3MP) and CP-E41Q (4MP). SkyHawk drives run from 1 TB to 16 TB. Call <a href={telHref}>{siteConfig.phone.primary.display}</a> for current prices.</p>
-        <PosterGrid four posters={["posterCpPlusDistributor", "posterHikvisionDistributor", "posterCpPlusWifi", "posterSeagateSkyhawk"]} />
+        <span className="eyebrow on-light">Brands we install</span>
+        <h3>CP Plus, Hikvision and Seagate SkyHawk.</h3>
+        <p>We supply, install and service CP Plus and Hikvision cameras, DVRs, NVRs and video door phones, and fit Seagate SkyHawk drives for recording. Call <a href={telHref}>{siteConfig.phone.primary.display}</a> for current prices.</p>
+        <PosterGrid posters={["posterCpPlusWifi", "posterSeagateSkyhawk"]} />
       </div>
     ),
   },
@@ -144,7 +144,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     art: (
       <svg {...artProps}><g {...strokeProps}><rect x="55" y="40" width="90" height="120" rx="8" /><line x1="55" y1="76" x2="145" y2="76" /><line x1="72" y1="98" x2="128" y2="98" stroke="#2E97FF" /><line x1="72" y1="118" x2="128" y2="118" /><line x1="72" y1="138" x2="104" y2="138" stroke="#FF9933" /></g></svg>
     ),
-    heading: <>Tally, set up properly and supported.</>,
+    heading: <>Tally installation, setup and support.</>,
     lead: <>As a certified sales and implementation partner, we handle licensing, GST-ready configuration, and the customizations your accountant asks for. When you call for support, someone picks up.</>,
     bullets: ["Genuine licensing & renewals", "Implementation & setup", "GST-ready configuration", "Custom reports & TDLs", "Data migration", "Ongoing AMC support"],
     after: <BrandRow brands={[BRANDS.tally, BRANDS.tallyPartner]} />,
@@ -160,7 +160,7 @@ export const SERVICE_DETAILS: ServiceDetail[] = [
     art: (
       <svg {...artProps}><g {...strokeProps}><ellipse cx="100" cy="52" rx="46" ry="16" stroke="#2E97FF" /><path d="M54 52v96c0 9 20 16 46 16s46-7 46-16V52" /><path d="M54 100c0 9 20 16 46 16s46-7 46-16" /><circle cx="100" cy="140" r="6" stroke="#FF9933" /></g></svg>
     ),
-    heading: <>Synology backup, so a dead drive doesn&rsquo;t cost you your data.</>,
+    heading: <>Synology backup that keeps your data safe when a drive fails.</>,
     lead: <>As an authorized Synology partner, we set up business-grade backup that runs on its own schedule, keeps redundant copies and can be restored when a drive fails.</>,
     bullets: ["Synology NAS supply & setup", "RAID configuration", "Automatic scheduled backup", "Off-site / cloud sync", "Disaster recovery planning", "Capacity & upgrade advice"],
     after: <BrandRow brands={[BRANDS.synology]} />,
